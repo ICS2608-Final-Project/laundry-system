@@ -1,0 +1,38 @@
+# Ignore composer files
+/vendor/
+
+# Ignore configuration files
+/config/config.php
+/config/database.php
+
+# Ignore user-specific files
+/.vscode/
+/.idea/
+
+# Ignore runtime data
+/logs/
+/cache/
+/session/
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore build and compiled files
+/build/
+/dist/
+
+# Ignore environment-specific files
+.env
+.env.local
+.env.*.local
+
+# Ignore miscellaneous files
+/nbproject/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore specific files
+.sensiolabs-insight
+/phpunit.xml
+/phpunit.xml.dist
