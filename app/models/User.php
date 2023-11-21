@@ -1,29 +1,18 @@
 <?php
-require_once '../core/Dbh.php';
+require_once '../core/Model.php';
 declare(strict_types=1);
 
-class User extends Dbh
+class User extends Model
 {
-    private string $username;
-    private string $password;
-    private bool $deleted;
-
-    public function __construct($_username, $_password)
-    {
-        $this->username = $_username;
-        $this->password = $_password;
-        $this->deleted = false;
-    }
-
     // CREATE
-    public function create()
+    public function create($username, $password)
     {
         try 
         {
-            $query = 'INSER INTO users(username, password, deleted) VALUES(:usernamae, :password, :deleted';
+            $query = 'INSER INTO users(username, password, deleted) VALUES(:usernamae, :password, :deleted);';
             $stmt = $this->connect()->prepare($query);
-            $stmt->bindParam(':username', $this->username);
-            $stmt->bindParam(':password', $this->password);
+            $stmt->bindParam(':username', $this->sanitizeInput($username));
+            $stmt->bindParam(':username', $this->sanitizeInput($password));
             $stmt->execute();
         } 
         catch (PDOException $e) 
@@ -33,15 +22,15 @@ class User extends Dbh
     }
 
     // READ
-    public function read()
+    public function read(int $id)
     {
         try 
         {
-            $query = 'SELECT * FROM users WHERE ""';
+            $query = 'SELECT * FROM :id WHERE "";';
             $stmt = $this->connect()->prepare($query);
-            $stmt->bindParam(':username', $this->username);
-            $stmt->bindParam(':password', $this->password);
+            $stmt->bindParam(':id', $this->sanitizeInput($id));
             $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         } 
         catch (PDOException $e) 
         {
