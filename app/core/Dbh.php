@@ -1,5 +1,5 @@
 <?php
-require_once '../../config/config.php';
+require_once '../../config/database.php';
 class Dbh 
 {
     private $host = DB_HOST;
