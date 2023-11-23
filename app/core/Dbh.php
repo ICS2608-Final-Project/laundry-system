@@ -1,14 +1,13 @@
 <?php
-require_once './config/config.php';
-
+require_once '../../config/config.php';
 class Dbh 
 {
-    private $host = $HOST;
-    private $port = $PORT;
-    private $socket = $SOCKET;
-    private $user = $USER;
-    private $password = $PASSWORD;
-    private $db_name = $DB_NAME;
+    private $host = DB_HOST;
+    private $port = DB_PORT;
+    private $socket = DB_SOCKET;
+    private $user = DB_USERNAME;
+    private $password = DB_PASSWORD;
+    private $db_name = DB_NAME;
 
     protected function connect()
     {

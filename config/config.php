@@ -1,8 +1,8 @@
 <?php
-define($HOST, "localhost");
-define($PORT, 3306);
-define($SOCKET, "");
-define($USER, "root");
-define($PASSWORD, "kody#181118");
-define($DB_NAME, "");
+define('DB_HOST', 'localhost');
+define('DB_PORT', '3306');
+define('DB_SOCKET', '');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'practice_db');
 ?>
