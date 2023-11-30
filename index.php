@@ -12,7 +12,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-    
+    <?php 
+    require_once 'classes/UserModel.php';
+    $user = new UserModel();
+    $user->add_new_user('admin', 'admin');
+    ?>
 </body>
 </html>
