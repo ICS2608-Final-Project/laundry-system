@@ -19,6 +19,21 @@ class UserModel extends Model {
         }
     }
     // READ
+    public function get_user(string $username) {
+        $username = self::sanitizeInput($username);
+        try {
+            $query = "SELECT username, user_password FROM users WHERE username = :username;";
+            $stmt = parent::connect()->prepare($query);
+            $stmt->bindParam(':username', $username);
+
+            $stmt->execute();
+
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die('Query Failed: ' . $e->getMessage());
+        }
+        
+    }
     // UPDATE
     // DELETE
 
