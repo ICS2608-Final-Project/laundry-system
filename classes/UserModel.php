@@ -97,6 +97,20 @@ class UserModel extends Model {
         }
     }
     // UPDATE
+    /**
+     * Updates a user record in the database.
+     *
+     * This function modifies an existing user record in the database with the provided user_id.
+     * It updates the username, hashed password, and the 'updated_at' timestamp.
+     * The function ensures secure input handling, password hashing, and manages the necessary
+     * database operations for user data modification.
+     *
+     * @param int    $id       The user_id of the user to be updated.
+     * @param string $username The new username for the user.
+     * @param string $password The new password for the user.
+     *
+     * @throws DatabaseException If there is an issue with the database operation.
+     */
     public function update_user(int $id, string $username, string $password) {
         $username = self::sanitizeInput($username);
         $user_password = self::hash_password(self::sanitizeInput($password));
@@ -116,6 +130,17 @@ class UserModel extends Model {
         }
     }
     // DELETE
+    /**
+     * Deletes a user record from the database.
+     *
+     * This function marks a user as deleted in the database by updating the 'is_deleted'
+     * column to 1 for the specified user_id. It ensures the secure handling of database
+     * operations for user deletion.
+     *
+     * @param int $id The user_id of the user to be deleted.
+     *
+     * @throws DatabaseException If there is an issue with the database operation.
+     */
     public function delete_user(int $id) {
         try {
             $query = "UPDATE users
