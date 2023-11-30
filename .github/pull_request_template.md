@@ -1,6 +1,3 @@
-# Pull Request
-<!-- Change the title to the title of the pull request -->
-
 ## Description
 <!-- ✨ Briefly describe the changes introduced by this pull request -->
 
