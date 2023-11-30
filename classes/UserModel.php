@@ -22,7 +22,7 @@ class UserModel extends Model {
     public function get_user(string $username) {
         $username = self::sanitizeInput($username);
         try {
-            $query = "SELECT username, user_password FROM users WHERE username = :username;";
+            $query = "SELECT username, user_password FROM users WHERE username = :username AND is_deleted = 0;";
             $stmt = parent::connect()->prepare($query);
             $stmt->bindParam(':username', $username);
 
@@ -34,7 +34,21 @@ class UserModel extends Model {
         }
         
     }
+
+    public function get_users() {
+        try {
+            $query = "SELECT username, user_password FROM users WHERE is_deleted = 0;";
+            $stmt = parent::connect()->prepare($query);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die('Query Failed: ' . $e->getMessage());
+        }
+        
+    }
     // UPDATE
+    public function update_user(string $username) {
+    }
     // DELETE
 
     private static function hash_password(string $password) {
