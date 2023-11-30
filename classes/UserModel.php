@@ -65,12 +65,23 @@ class UserModel extends Model {
         }
     }
     // DELETE
+    public function delete_user(int $id) {
+        try {
+            $query = "UPDATE users
+                    SET is_deleted = 1
+                    WHERE user_id = :id;";
+            $stmt = parent::connect()->prepare($query);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            die('Query Failed: ' . $e->getMessage());
+        }
+    }
 
     private static function hash_password(string $password) {
         $options = [
             'cost' => 12
         ];
-
         return password_hash($password, PASSWORD_BCRYPT, $options);
     }
 }
