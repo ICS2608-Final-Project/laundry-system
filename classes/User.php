@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-require_once '../core/Model.php';
+require_once 'Model.php';
 
 class User extends Model
 {

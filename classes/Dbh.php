@@ -1,7 +1,6 @@
 <?php
-require_once '../../config/database.php';
-class Dbh 
-{
+require_once 'config/database.php';
+class Dbh {
     private $host = DB_HOST;
     private $port = DB_PORT;
     private $socket = DB_SOCKET;

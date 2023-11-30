@@ -162,4 +162,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-config/database.php
+database.php
