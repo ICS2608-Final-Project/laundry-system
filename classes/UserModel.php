@@ -44,10 +44,25 @@ class UserModel extends Model {
         } catch (PDOException $e) {
             die('Query Failed: ' . $e->getMessage());
         }
-        
     }
     // UPDATE
-    public function update_user(string $username) {
+    public function update_user(int $id, string $username, string $password) {
+        $username = self::sanitizeInput($username);
+        $user_password = self::hash_password(self::sanitizeInput($password));
+        try {
+            $query = "UPDATE users
+                    SET username = :username,
+                        user_password = :user_password,
+                        updated_at = (NOW())
+                    WHERE user_id = :id;";
+            $stmt = parent::connect()->prepare($query);
+            $stmt->bindParam(':id', $id);
+            $stmt->bindParam(':username', $username);
+            $stmt->bindParam(':user_password', $user_password);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            die('Query Failed: ' . $e->getMessage());
+        }
     }
     // DELETE
 
