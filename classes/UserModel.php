@@ -38,19 +38,21 @@ class UserModel extends Model {
     // READ
 
     /**
-     * fetches a user record from users from the database.
-     * 
-     * This function is responsible for fetching a user record from the database,
-     * including the provided username. It ensures the secure storage of
-     * user credentials and manages the necessary database operations for user creation.
-     * 
-     * 
-     * @param string $username The username of the user to be fetching.
-     * 
-     * @return bool True if the user addition is successful, false otherwise.
-     * 
+     * Fetches a user record from the database.
+     *
+     * This function retrieves a user record from the database based on the provided identifier.
+     * It can fetch a user either by username or user_id, depending on the $isUsername parameter.
+     * It ensures the secure retrieval of user credentials and handles the necessary database
+     * operations for user data retrieval.
+     *
+     * @param string|int $identifier The username or user_id of the user to fetch.
+     * @param bool $isUsername (Optional) Set to true if $identifier is a username (default), false if it's a user_id.
+     *
+     * @return array|null An associative array containing user properties if the user is found,
+     *                    or null if the user is not found.
+     *                    Keys include 'username' and 'user_password'.
+     *
      * @throws DatabaseException If there is an issue with the database operation.
-     * 
      */
     public function fetch_user($identifier, bool $isUsername = true) {
         $identifier = self::sanitizeInput($identifier);
@@ -72,6 +74,18 @@ class UserModel extends Model {
         
     }
 
+    /**
+     * Fetches all active user records from the database.
+     *
+     * This function retrieves all user records from the database where the user is not deleted.
+     * It ensures the secure retrieval of user credentials and handles the necessary database
+     * operations for fetching user data.
+     *
+     * @return array An array containing associative arrays for each user.
+     *               Each associative array has keys 'username' and 'user_password'.
+     * @throws DatabaseException If there is an issue with the database operation.
+     *
+     */
     public function fetch_users() {
         try {
             $query = "SELECT username, user_password FROM users WHERE is_deleted = 0;";
