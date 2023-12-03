@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `lovehon_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `lovehon_db`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: localhost    Database: lovehon_db
@@ -32,8 +30,18 @@ CREATE TABLE `customers` (
   `email` varchar(45) NOT NULL,
   `customer_address` varchar(255) NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customers`
+--
+
+LOCK TABLES `customers` WRITE;
+/*!40000 ALTER TABLE `customers` DISABLE KEYS */;
+INSERT INTO `customers` VALUES (1000,'Winfrey','De Vera','+639658108388','w.jamesdevera@gmail.com','Quezon City');
+/*!40000 ALTER TABLE `customers` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `payment_methods`
@@ -49,13 +57,24 @@ CREATE TABLE `payment_methods` (
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   `created_by` int DEFAULT NULL,
   `updated_by` int DEFAULT NULL,
+  `payment_method_name` varchar(50) NOT NULL,
   PRIMARY KEY (`payment_method_id`),
   KEY `created_by` (`created_by`),
   KEY `updated_by` (`updated_by`),
   CONSTRAINT `payment_methods_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`user_id`),
   CONSTRAINT `payment_methods_ibfk_2` FOREIGN KEY (`updated_by`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `payment_methods`
+--
+
+LOCK TABLES `payment_methods` WRITE;
+/*!40000 ALTER TABLE `payment_methods` DISABLE KEYS */;
+INSERT INTO `payment_methods` VALUES (1,'2023-12-03 04:25:31','2023-12-03 04:25:31',0,1004,1004,'Cash on Delivery');
+/*!40000 ALTER TABLE `payment_methods` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `service_transactions`
@@ -75,8 +94,18 @@ CREATE TABLE `service_transactions` (
   KEY `transaction_id` (`transaction_id`),
   CONSTRAINT `service_transactions_ibfk_1` FOREIGN KEY (`service_id`) REFERENCES `services` (`service_id`),
   CONSTRAINT `service_transactions_ibfk_2` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`transaction_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `service_transactions`
+--
+
+LOCK TABLES `service_transactions` WRITE;
+/*!40000 ALTER TABLE `service_transactions` DISABLE KEYS */;
+INSERT INTO `service_transactions` VALUES (2,1,1,3,1050.00);
+/*!40000 ALTER TABLE `service_transactions` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `services`
@@ -102,8 +131,18 @@ CREATE TABLE `services` (
   KEY `updated_by` (`updated_by`),
   CONSTRAINT `services_ibfk_1` FOREIGN KEY (`created_by`) REFERENCES `users` (`user_id`),
   CONSTRAINT `services_ibfk_2` FOREIGN KEY (`updated_by`) REFERENCES `users` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `services`
+--
+
+LOCK TABLES `services` WRITE;
+/*!40000 ALTER TABLE `services` DISABLE KEYS */;
+INSERT INTO `services` VALUES (1,'WASH-DRY-FOLD per Bag','Up to 8kgs; max 40-50 items; 3-4 days turn around',350.00,'active','2023-12-03 04:15:43','2023-12-03 04:15:43',1,0,1004,1004);
+/*!40000 ALTER TABLE `services` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `transactions`
@@ -124,8 +163,18 @@ CREATE TABLE `transactions` (
   KEY `payment_method_id` (`payment_method_id`),
   CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`),
   CONSTRAINT `transactions_ibfk_2` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_methods` (`payment_method_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transactions`
+--
+
+LOCK TABLES `transactions` WRITE;
+/*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (1,1000,1,'2023-12-03','unpaid',0);
+/*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `users`
@@ -143,8 +192,18 @@ CREATE TABLE `users` (
   `is_visible` tinyint(1) NOT NULL DEFAULT '0',
   `is_deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1006 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1007 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1004,'win','$2y$12$medjrKZ1YqDmHIA8jUA8s.xZ.L4A2LJYBOd79jWVyrLAZlZapU/Lq','2023-11-30 01:57:36','2023-11-30 13:10:20',0,1),(1005,'admin','$2y$12$0n3obpvnjDW6cQ3GzC6t6./vEW0TSaBpbzJRpWkll58Rto.mofL/G','2023-11-30 01:59:20','2023-11-30 09:59:20',0,0),(1006,'admin','$2y$12$SRbTHaD9yNJQoCmmqVY2wudpGIbHPSaWWbpCOIPM1pPSSaC8kcwY2','2023-12-03 05:53:57','2023-12-03 13:53:57',0,0);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -155,4 +214,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-01 17:53:20
+-- Dump completed on 2023-12-03 21:02:06

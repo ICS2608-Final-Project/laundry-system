@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_id($sessionId);
 
     $_SESSION['user_id'] = $user['user_id'];
+    $_SESSION['username'] = $user['username'];
     $_SESSION['last_regeneration'] = time();
 
     header("Location: admin.dashboard.php");
