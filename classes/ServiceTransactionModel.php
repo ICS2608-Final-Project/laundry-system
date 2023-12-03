@@ -69,7 +69,7 @@ class ServiceTransactionModel extends Model
             price = :price
             WHERE service_transaction_id = :service_transaction_id;";
             $stmt = parent::connect()->prepare($query);
-            $stmt->bindParam(':payment_method_id', $service_transaction_id);
+            $stmt->bindParam(':service_transaction_id', $service_transaction_id);
             $stmt->bindParam(':quantity', $quantity);
             $stmt->bindParam(':price', $price);
             $stmt->execute();
@@ -78,7 +78,7 @@ class ServiceTransactionModel extends Model
         }
     }
 
-     //DELETE OPERATION FOR SERVICE TRANSACTION
+    //DELETE OPERATION FOR SERVICE TRANSACTION
 
      public function delete_service_transaction(int $service_transaction_id)
      {
