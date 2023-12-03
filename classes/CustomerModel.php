@@ -38,6 +38,18 @@ class CustomerModel extends Model{
             die('Query Failed: ' . $e->getMessage());
         }
     }
+    //readUser
+    public function readUser(){
+        try {
+            $query = "SELECT * FROM customer WHERE id = :id";
+            $stmt = $this->connect()->prepare($query);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die('Query Failed: ' . $e->getMessage());
+        }
+    }
     //update
     public function updateCustomerUser(int $id){
 
