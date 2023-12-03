@@ -9,12 +9,12 @@ class ServiceTransactionModel extends Model
 
     //CREATE OPERATION FOR SERVICE TRANSACTION
 
-    public function add_service_transaction(int $service_id, int $transcation_id,int $quantity, float $price)
+    public function add_service_transaction(int $service_id, int $transcation_id, int $quantity, float $price)
     {
         $quantity = self::sanitizeInput($quantity);
         $price = self::sanitizeInput($price);
         try {
-            $query = "INSERT INTO service_transactions('service_id','transaction_id','quantity','price') 
+            $query = "INSERT INTO service_transactions(service_id,transaction_id,quantity,price) 
             VALUES (:service_id,:transaction_id,:quantity,:price);";
             $stmt = parent::connect()->prepare($query);
             $stmt->bindParam(':service_id', $service_id);
@@ -28,8 +28,9 @@ class ServiceTransactionModel extends Model
     }
 
     //READ OPERATION FOR SERVICE TRANSACTION
+    
 
-    public function read_service_transaction()
+    public function fetch_all_service_transaction()
     {
         try {
             $query = "SELECT * 
