@@ -28,7 +28,20 @@ class ServiceTransactionModel extends Model
     }
 
     //READ OPERATION FOR SERVICE TRANSACTION
-    
+    public function fetch_service_transaction(int $transcation_id) {
+        $transcation_id = self::sanitizeInput($transcation_id);
+        try {
+            $query = "SELECT * 
+            FROM service_transactions
+            WHERE transaction_id = :transaction_id";
+            $stmt = parent::connect()->prepare($query);
+            $stmt->bindParam(':transaction_id', $transcation_id);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die('Query Failed: ' . $e->getMessage());
+        }
+    }
 
     public function fetch_all_service_transaction()
     {
