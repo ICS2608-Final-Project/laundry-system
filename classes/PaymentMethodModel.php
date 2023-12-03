@@ -9,15 +9,16 @@ class PaymentMethodModel extends Model
 
     //CREATE OPERATION FOR PAYMENT METHOD
 
-    public function new_payment_method(int $created_by, int $updated_by)
+    public function new_payment_method(string $payment_method_name,int $created_by)
     {
+        $payment_method_name = self::sanitizeInput($payment_method_name);
         $created_by = self::sanitizeInput($created_by);
-        $updated_by = self::sanitizeInput($updated_by);
         try {
-            $query = "INSERT INTO payment_methods ('created_by','updated_by') VALUES (:created_by,:updated_by);";
+            $query = "INSERT INTO payment_methods ('payment_method_name','created_by') 
+            VALUES (:payment_method_name,:created_by);";
             $stmt = parent::connect()->prepare($query);
+            $stmt->bindParam(':payment_method_name', $payment_method_name);
             $stmt->bindParam(':created_by', $created_by);
-            $stmt->bindParam(':updated_by', $updated_by);
             $stmt->execute();
         } catch (PDOException $e) {
             die('Query Failed: ' . $e->getMessage());
@@ -43,16 +44,19 @@ class PaymentMethodModel extends Model
 
     //UPDATE OPERATION FOR PAYMENT METHOD
 
-    public function update_payment_method(int $payment_method_id, int $updated_by)
+    public function update_payment_method(int $payment_method_id, string $payment_method_name, int $updated_by)
     {
+        $payment_method_name = self::sanitizeInput($payment_method_name);
         $updated_by = self::sanitizeInput($updated_by);
         try {
             $query = "UPDATE payment_methods
-            SET updated_by = :updated_by,
+            SET payment_method_name = :payment_method_name
+            updated_by = :updated_by,
             updated_at = (NOW())
             WHERE payment_method_id = :payment_method_id;";
             $stmt = parent::connect()->prepare($query);
             $stmt->bindParam(':payment_method_id', $payment_method_id);
+            $stmt->bindParam(':payment_method_name', $payment_method_name);
             $stmt->bindParam(':updated_by', $updated_by);
             $stmt->execute();
         } catch (PDOException $e) {
