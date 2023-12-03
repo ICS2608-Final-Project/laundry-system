@@ -80,16 +80,16 @@ class ServiceTransactionModel extends Model
 
     //DELETE OPERATION FOR SERVICE TRANSACTION
 
-     public function delete_service_transaction(int $service_transaction_id)
-     {
-         try {
-             $query = "DELETE FROM service_transactions
-             WHERE service_transaction_id = :service_transaction_id;";
-             $stmt = parent::connect()->prepare($query);
-             $stmt->bindParam(':service_transaction_id', $service_transaction_id);
-             $stmt->execute();
-         } catch (PDOException $e) {
-             die('Query Failed: ' . $e->getMessage());
-         }
-     }
+    public function delete_service_transaction(int $service_transaction_id)
+    {
+        try {
+            $query = "DELETE FROM service_transactions
+            WHERE service_transaction_id = :service_transaction_id;";
+            $stmt = parent::connect()->prepare($query);
+            $stmt->bindParam(':service_transaction_id', $service_transaction_id);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            die('Query Failed: ' . $e->getMessage());
+        }
+    }
 }
