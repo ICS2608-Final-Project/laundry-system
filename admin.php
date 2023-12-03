@@ -18,7 +18,7 @@
             <form action="loginHandler.php" method="post">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="username" class="form-control" id="username" name="username">
+                    <input type="username" class="form-control" id="username" name="username" autocomplete="off" autocapitalize="off">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
