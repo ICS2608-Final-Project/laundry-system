@@ -9,16 +9,18 @@ class PaymentMethodModel extends Model
 
     //CREATE OPERATION FOR PAYMENT METHOD
 
-    public function new_payment_method(string $payment_method_name,int $created_by)
+    public function new_payment_method(string $payment_method_name, int $created_by, int $updated_by)
     {
         $payment_method_name = self::sanitizeInput($payment_method_name);
         $created_by = self::sanitizeInput($created_by);
+        $updated_by = self::sanitizeInput($updated_by);
         try {
-            $query = "INSERT INTO payment_methods ('payment_method_name','created_by') 
-            VALUES (:payment_method_name,:created_by);";
+            $query = "INSERT INTO payment_methods ('payment_method_name','created_by','updated_by') 
+            VALUES (:payment_method_name,:created_by, :updated_by);";
             $stmt = parent::connect()->prepare($query);
             $stmt->bindParam(':payment_method_name', $payment_method_name);
             $stmt->bindParam(':created_by', $created_by);
+            $stmt->bindParam(':updated_by', $updated_by);
             $stmt->execute();
         } catch (PDOException $e) {
             die('Query Failed: ' . $e->getMessage());
