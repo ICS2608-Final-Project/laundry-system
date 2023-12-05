@@ -30,10 +30,10 @@ class CustomerModel extends Model {
     public function fetch_customers() {
         try 
         {
-            $query = "SELECT * FROM 'customer' ORDER BY id desc";
+            $query = "SELECT * FROM customers WHERE is_deleted = 0 ORDER BY customer_id DESC;";
             $stmt = $this->connect()->prepare($query);
             $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } 
         catch (PDOException $e) 
         {
