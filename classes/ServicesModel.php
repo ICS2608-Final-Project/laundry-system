@@ -35,7 +35,7 @@ class ServicesModel extends Model
 
     //read
 
-    public function fetch_service($identifier, bool $isServiceName = false) {
+    public function fetch_service(int|string $identifier, bool $isServiceName = false) {
         $identifier = self::sanitizeInput($identifier);
         if ($isServiceName) {
             $query = "SELECT * FROM services WHERE service_name LIKE :identifier AND is_deleted = 0;";
