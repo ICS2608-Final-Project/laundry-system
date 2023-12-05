@@ -26,10 +26,27 @@ class CustomerModel extends Model {
         }
     }
 
+
+    public function fetch_customer($identifier, bool $isCustomerFirstName = false) {
+        $identifier = self::sanitizeInput($identifier);
+        if ($isCustomerFirstName) {
+            $query = "SELECT * FROM customers WHERE is_deleted = 0 AND first_name LIKE :identifier;";
+        } else {
+            $query = "SELECT * FROM customers WHERE is_deleted = 0 AND customer_id = :identifier;";
+        }
+        try {
+            $stmt = $this->connect()->prepare($query);
+            $stmt->bindParam(':identifier', $identifier);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die('Query Failed: ' . $e->getMessage());
+        }
+
+    }
     
     public function fetch_customers() {
-        try 
-        {
+        try {
             $query = "SELECT * FROM customers WHERE is_deleted = 0 ORDER BY customer_id DESC;";
             $stmt = $this->connect()->prepare($query);
             $stmt->execute();
@@ -40,49 +57,39 @@ class CustomerModel extends Model {
             die('Query Failed: ' . $e->getMessage());
         }
     }
-    //readUser
-    public function readUser(){
-        try {
-            $query = "SELECT * FROM customer WHERE id = :id";
-            $stmt = $this->connect()->prepare($query);
-            $stmt->bindParam(':id', $id);
-            $stmt->execute();
-            return $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            die('Query Failed: ' . $e->getMessage());
-        }
-    }
     //update
-    public function updateCustomerUser(int $id){
-
-        try{
-            $query = "UPDATE customer 
+    public function update_customer(int $id, string $first_name, string $last_name, string $mobile_number, string $email, string $customer_address) {
+        $id = self::sanitizeInput($id);
+        $first_name = self::sanitizeInput($first_name);
+        $last_name = self::sanitizeInput($last_name);
+        $mobile_number = self::sanitizeInput($mobile_number);
+        $email = self::sanitizeInput($email);
+        $customer_address = self::sanitizeInput($customer_address);
+        try {
+            $query = "UPDATE customers 
             SET first_name = :first_name,
                 last_name = :last_name,
                 mobile_number = :mobile_number,
                 email = :email,
-                address = :address
-            WHERE id = :id";
-
+                customer_address = :customer_address
+            WHERE customer_id = :id";
             $stmt = parent::connect()->prepare($query);
             $stmt->bindParam(':id', $id);
             $stmt->bindParam(':first_name', $first_name);
             $stmt->bindParam(':last_name', $last_name);
             $stmt->bindParam(':mobile_number', $mobile_number);
             $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':address', $address);
+            $stmt->bindParam(':customer_address', $customer_address);
             $stmt->execute();
 
-        }catch(PDOException $e){
+        } catch(PDOException $e){
             die('Query Failed: ' . $e->getMessage());
         }
-
     }
     //delete
-    public function deleteCustomerUser(int $id){
-
+    public function delete_customer(int $id){
         try {
-            $query = "UPDATE customer
+            $query = "UPDATE customers
                     SET is_deleted = 1
                     WHERE customer_id = :id";
             $stmt = parent::connect()->prepare($query);
