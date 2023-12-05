@@ -3,29 +3,31 @@ declare(strict_types=1);
 
 require_once 'Model.php';
 
-class CustomerModel extends Model{
-
-    //create
-    public function newCustomerUser (){
-
+class CustomerModel extends Model {
+    public function add_customer($first_name, $last_name, $mobile_number, $email, $customer_address) {
+        $first_name = self::sanitizeInput($first_name);
+        $last_name = self::sanitizeInput($last_name);
+        $mobile_number = self::sanitizeInput($mobile_number);
+        $email = self::sanitizeInput($email);
+        $customer_address = self::sanitizeInput($customer_address);
         try {
-            $query = "INSERT INTO customer (first_name, last_name, mobile_number, email, address) 
-            VALUES (:first_name, :last_name, :mobile_number, :email, :address);";
+            $query = "INSERT INTO customers(first_name, last_name, mobile_number, email, customer_address) 
+            VALUES (:first_name, :last_name, :mobile_number, :email, :customer_address);";
 
             $stmt = parent::connect()->prepare($query);
             $stmt->bindParam(':first_name', $first_name);
             $stmt->bindParam(':last_name', $last_name);
             $stmt->bindParam(':mobile_number', $mobile_number);
             $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':address', $address);
+            $stmt->bindParam(':customer_address', $customer_address);
             $stmt->execute();
         } catch (PDOException $e) {
             die('Query Failed: ' . $e->getMessage());
         }
     }
-    //read
-    public function readCustomerUser(){
-        
+
+    
+    public function fetch_customers() {
         try 
         {
             $query = "SELECT * FROM 'customer' ORDER BY id desc";
