@@ -7,16 +7,14 @@ require_once 'Model.php';
 class PaymentMethodModel extends Model
 {
 
-    //CREATE OPERATION FOR PAYMENT METHOD
-
-    public function new_payment_method(string $payment_method_name, int $created_by, int $updated_by)
+    public function add_payment_method(string $payment_method_name, int $created_by, int $updated_by)
     {
         $payment_method_name = self::sanitizeInput($payment_method_name);
         $created_by = self::sanitizeInput($created_by);
         $updated_by = self::sanitizeInput($updated_by);
         try {
-            $query = "INSERT INTO payment_methods ('payment_method_name','created_by','updated_by') 
-            VALUES (:payment_method_name,:created_by, :updated_by);";
+            $query = "INSERT INTO payment_methods(payment_method_name, created_by, updated_by) 
+            VALUES (:payment_method_name, :created_by, :updated_by);";
             $stmt = parent::connect()->prepare($query);
             $stmt->bindParam(':payment_method_name', $payment_method_name);
             $stmt->bindParam(':created_by', $created_by);
@@ -30,11 +28,28 @@ class PaymentMethodModel extends Model
 
     //READ OPERATION FOR PAYMENT METHOD
 
-    public function read_payment_method()
+    public function fetch_payment_method($identifier, bool $isName = false) {
+        $identifier = self::sanitizeInput($identifier);
+        try {
+            if ($isName) {
+                $query = "SELECT * FROM payment_methods WHERE payment_method_name LIKE :identifier AND is_deleted = 0;";
+            } else {
+                $query = "SELECT * FROM payment_methods WHERE payment_method_id = :identifier AND is_deleted = 0;";
+            }
+            $stmt = parent::connect()->prepare($query);
+            $stmt->bindParam(':identifier', $identifier);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die('Query Failed: ' . $e->getMessage());
+        }
+    }
+
+    public function fetch_payment_methods()
     {
         try {
             $query = "SELECT * 
-            FROM payment_methods ORDER BY payment_method_id DESC";
+            FROM payment_methods WHERE is_deleted = 0;";
             $stmt = parent::connect()->prepare($query);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -52,7 +67,7 @@ class PaymentMethodModel extends Model
         $updated_by = self::sanitizeInput($updated_by);
         try {
             $query = "UPDATE payment_methods
-            SET payment_method_name = :payment_method_name
+            SET payment_method_name = :payment_method_name,
             updated_by = :updated_by,
             updated_at = (NOW())
             WHERE payment_method_id = :payment_method_id;";
