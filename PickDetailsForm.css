@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+.hero{
+    height: auto;
+    width: 100%;
+}
+.container-lg{
+    padding: 3rem;
+    height: auto;
+    max-width: 30rem;
+    display: flex;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    background-color: white;
+    border-radius: 12px;
+    justify-content: center;
+    border: none;
+    justify-content: space-evenly;
+    box-shadow: 6px 6px 12px #909090;
+}
+input, select{
+    border: solid 1px;
+    height: 2.5rem;
+}
+.name, .mobileNo, .email, .paymentMeth, .pickup{
+    font-size: 16px;
+}
+.namefield, .mobileField, .emailField, .PaymentField, .pickupField{
+    margin-bottom: 1rem;
+}
+.mobileField{
+    margin-top: 1rem;
+}
+.btn1{
+    font-size: 20px;
+    color: white;
+    height: 2rem;
+    width: 7rem;
+    background-color: rgb(234, 81, 153);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;   
+}
