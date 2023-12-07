@@ -49,3 +49,9 @@ input, select{
     border-radius: 8px;
     cursor: pointer;   
 }
+@media(max-width: 400px){
+    input{
+        display: flex;
+        width: 100%;
+    }
+}

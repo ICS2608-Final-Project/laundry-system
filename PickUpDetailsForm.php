@@ -14,19 +14,19 @@
                     <label for="name" class="name">Name</label><br>
                     <div class="row">
                         <div class="col">
-                            <input type="text" name="Firstname" placeholder="  First Name" class="Firstname" style="width:100%;" required >
+                            <input type="text" name="first_name" placeholder="  First Name" class="first_name" style="width:100%;" required >
                         </div>
                         <div class="col">
-                            <input type="text" name="Lastname" placeholder="  Last Name" class="Lastname" style="width:100%;" required >
+                            <input type="text" name="last_name" placeholder="  Last Name" class="last_name" style="width:100%;" required >
                         </div>
                     </div>
                 <div class="mobileField">
                     <label for="mobileNo" class="mobileNo">Mobile No.</label><br>
-                    <input type=" text" name="mobileNo" placeholder="   09XX-XXX-XXX" style="width:100%;" required >
+                    <input type=" text" name="mobile_number" placeholder="   09XX-XXX-XXX" class="mobile_number" style="width:100%;" required >
                 </div>
                 <div class="emailField">
                     <label for="email" class="email">Email</label><br>
-                    <input type="text" name="email" placeholder="   Email" style="width:100%;" required >
+                    <input type="text" name="email" placeholder="   Email" class="email" style="width:100%;" required >
                 </div>
                 <div class="PaymentField">
                     <label for="paymentMeth" class="paymentMeth">Payment Method</label><br>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="pickupField">
                     <label for="pickup" class="pickup">Pickup and Delivery Address</label><br>
-                    <input type="text" name="email" placeholder="   Enter pickup location" style="width:100%;" required >
+                    <input type="text" name="customer_address" placeholder="   Enter pickup location" class="customer_address" style="width:100%;" required >
                 </div>
                 <button class="btn1" name="btn1" >Next</button>
             </form>
