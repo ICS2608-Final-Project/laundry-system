@@ -56,3 +56,7 @@ button:active {
 .navlinks li {
   display: inline-block;
 }
+
+.navlinks > li > a:hover {
+  color: $primary;
+}
