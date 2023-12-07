@@ -22,16 +22,11 @@
                                 <span class="fs-4 fs-md-5 d-none d-md-inline">Home</span>
                             </a>
                         </li>
+                        <!-- Add link to inbox page -->
                         <li class="nav-item">
-                            <a href="" class="nav-link text-white">
-                                <i class="fs-5 bi bi-speedometer2"></i>
-                                <span class="fs-4 fs-md-5 d-none d-sm-inline">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link text-white">
-                                <i class="fs-4 bi bi-people-fill"></i>
-                                <span class="fs-5 d-none d-sm-inline">Customers</span>
+                            <a href="admin.orders.php" class="nav-link text-white <?php if ($current_page == 'inbox') echo 'active' ?>">
+                                <i class="fs-4 bi bi-envelope"></i>
+                                <span class="fs-5 d-none d-sm-inline">Inbox</span>
                             </a>
                         </li>
                         <li class="nav-item">

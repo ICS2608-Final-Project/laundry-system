@@ -64,13 +64,12 @@ class ServicesModel extends Model
 
 
     //update
-    public function update_service(int $service_id, int $updated_by, string $name, string $description, float $price, string $status, bool $visible){
+    public function update_service(int $service_id, int $updated_by, string $name, string $description, float $price, string $status){
         $updated_by = self::sanitizeInput($updated_by);
         $name = self::sanitizeInput($name);
         $description = self::sanitizeInput($description);
         $price = self::sanitizeInput($price);
         $status = self::sanitizeInput($status);
-        $visible = self::sanitizeInput($visible);
         try {
             $query = "UPDATE services
                       SET updated_by = :updated_by,
@@ -78,7 +77,6 @@ class ServicesModel extends Model
                           service_description = :description,
                           service_price = :price,
                           service_status = :status,
-                          is_visible = :is_visible,
                           updated_at = NOW()
                       WHERE service_id = :service_id;";
             $stmt = parent::connect()->prepare($query);
@@ -88,7 +86,6 @@ class ServicesModel extends Model
             $stmt->bindParam(':description', $description);
             $stmt->bindParam(':price', $price);
             $stmt->bindParam(':status', $status);
-            $stmt->bindParam(':is_visible', $visible, PDO::PARAM_BOOL);
             $stmt->execute();
         } catch (PDOException $e) {
             die('Query Failed: ' . $e->getMessage());
