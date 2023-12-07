@@ -1,4 +1,3 @@
-
 <?php
 require_once 'config/session.config.php';
 
@@ -17,12 +16,12 @@ require_once 'classes/ServicesModel.php';
 $services_model = new ServicesModel();
 $user_model = new UserModel();
 
-if (!isset($_GET['service_id'])) {
+if (!isset($_GET['payment_id'])) {
     header("Location: admin.dashboard.php");
     die();
 }
 
-$service_id = $_GET['service_id'];
+$service_id = $_GET['payment_id'];
 $_SESSION['update_id'] = $service_id;
 unset($_GET['service_id']);
 $service = $services_model->fetch_service($service_id);
@@ -35,7 +34,7 @@ $service = $services_model->fetch_service($service_id);
         $last_updated_by = $user_model->fetch_user($service['updated_by'], false);
         ?>
         <p>Created by: <?php echo $created_by['username'] ?></p>
-        <p>Created at <?php echo $service['updated_at'] ?></p>
+        <p>Created at <?php echo $service['created_at'] ?></p>
         <p>Last updated by: <?php echo $last_updated_by['username'] ?></p>
         <p>Last updated <?php echo $service['updated_at'] ?></p>
     </div>

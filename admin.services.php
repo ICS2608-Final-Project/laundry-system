@@ -18,7 +18,7 @@ $services = $services_model->fetch_services();
 ?>
 <main class="container">
     <h2 class="my-2">Services</h2>
-    <a href="" class="btn btn-primary my-2">ADD SERVICE</a>
+    <a href="admin.service.add.php" class="btn btn-primary my-2">ADD SERVICE</a>
     <table class="table my-2">
         <thead class="table-primary">
             <tr>
