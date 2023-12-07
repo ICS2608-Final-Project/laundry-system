@@ -1,0 +1,58 @@
+@import 'colors';
+li,
+a {
+  font-weight: 400;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+button {
+  width: 136px;
+  height: 35px;
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  border: none;
+  text-decoration: none;
+  background-color: $primary;
+  border-radius: 8px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  background-color: $primary;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $neutral-white;
+  max-height: 5rem;
+}
+
+.navlogo {
+  position: relative;
+  top: -.25rem;
+}
+
+.navright {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.navlinks li {
+  display: inline-block;
+}
