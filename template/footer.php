@@ -1,5 +1,7 @@
     <footer>
-        <img src="assets/FooterLogo.svg" alt="FooterLogo" class="footer-left">
+        <div class="footer-left">
+            <img src="assets/FooterLogo.svg" alt="FooterLogo" class="footer-left">
+        </div>
 
         <div class="footer-center">
             <p class="center-time">Open Daily 8am - 9pm</p>
@@ -14,7 +16,7 @@
                 <li><a href="">Pricing</a></li>
                 <li><a href="">About Us</a></li>
             </ul>
-            <p class="footer-legal">© 2023 LoveHon. All rights reserved</p>
+            <p class="footer-legal">&copy; 2023 LoveHon. All rights reserved</p>
         </div>
     </footer>
     <script src="./js/script.js"></script>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <title><?php $page_title = isset($page_title) ? $page_title : 'Home'; echo $page_title ?></title>
     <body>
-        <header class="navbar">
+        <!-- <header class="navbar">
             <img src="assets/Logo.svg" alt="Logo" class="navlogo" />
             <nav class="navright">
                 <ul class="navlinks">
@@ -19,6 +19,4 @@
                     <button>Book Now</button>
                 </a>
             </nav>
-        </header>
-    </body>
-</html>
+        </header> -->
