@@ -9,6 +9,11 @@ footer {
   background-color: $neutral-black-2;
   padding: 1.5rem 0;
   width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
   li,
   a,
   p {
@@ -30,7 +35,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 5rem;
+  gap: 3rem;
 
   .footer-links > li,
   li > a {
@@ -66,5 +71,9 @@ footer {
       color: $neutral-white;
       text-decoration: none;
     }
+  }
+
+  .footer-right {
+    gap: 5rem;
   }
 }
