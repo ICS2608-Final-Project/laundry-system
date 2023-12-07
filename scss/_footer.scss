@@ -1,0 +1,79 @@
+@import "colors";
+
+footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  background-color: $neutral-black-2;
+  padding: 1.5rem 0;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  li,
+  a,
+  p {
+    font-weight: 300;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: $neutral-white;
+    text-decoration: none;
+  }
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+
+  .footer-links > li,
+  li > a {
+    color: $neutral-white;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.footer-right li:hover :not(.li-label) {
+  color: $primary;
+}
+
+.li-label {
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    li,
+    a,
+    p {
+      font-weight: 300;
+      font-size: 0.74rem;
+      line-height: 1rem;
+      color: $neutral-white;
+      text-decoration: none;
+    }
+  }
+
+  .footer-right {
+    gap: 5rem;
+  }
+}
