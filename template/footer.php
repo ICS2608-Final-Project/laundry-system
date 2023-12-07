@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/footer.scss" />
-    <link rel="stylesheet" href="scss/_typography.scss" />
-    <link rel="stylesheet" href="scss/main.scss" />
-    <title><?php $page_title = isset($page_title) ? $page_title : 'Home';
-            echo $page_title ?></title>
-</head>
-
-<body>
     <footer>
         <img src="assets/FooterLogo.svg" alt="FooterLogo" class="footer-left">
 
@@ -31,5 +17,6 @@
             <p class="footer-legal">© 2023 LoveHon. All rights reserved</p>
         </div>
     </footer>
+    <script src="./js/script.js"></script>
 </body>
 </html>
