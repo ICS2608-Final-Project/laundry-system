@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <main class="container">
-    <h2>Add a service</h2>
+    <h2>Add a payment method</h2>
     <div class="container border my-3 p-3">
         <form action="admin.payment_method.add.php" method="post">
             <div class="mb-3">
