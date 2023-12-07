@@ -77,7 +77,7 @@ class ServicesModel extends Model
                           service_description = :description,
                           service_price = :price,
                           service_status = :status,
-                          updated_at = NOW()
+                          updated_at = (NOW())
                       WHERE service_id = :service_id;";
             $stmt = parent::connect()->prepare($query);
             $stmt->bindParam(':service_id', $service_id);

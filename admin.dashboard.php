@@ -23,7 +23,7 @@ include_once 'template/admin.header.php';
                     <a href="admin.services.php" class="link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Services</a>
                 </th>
                 <td class="col">
-                    <a  href="" class="link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">
+                    <a  href="admin.service.add.php" class="link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">
                     <i class="bi bi-plus-circle"></i>
                     <span>Add</span>
                     </a>
@@ -31,10 +31,10 @@ include_once 'template/admin.header.php';
             </tr>
             <tr >
                 <th scope='row'>
-                    <a href="" class="link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Payment Method</a>
+                    <a href="admin.paymentmethods.php" class="link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">Payment Method</a>
                 </th>
                 <td class="col">
-                    <a  href="" class="link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">
+                    <a  href="admin.payment_method.add.php" class="link-primary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">
                     <i class="bi bi-plus-circle"></i>
                     <span>Add</span>
                     </a>
