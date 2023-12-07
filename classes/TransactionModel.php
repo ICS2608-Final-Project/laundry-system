@@ -40,7 +40,7 @@ class TransactionModel extends Model
             $stmt = parent::connect()->prepare($query);
             $stmt->bindParam(':transaction_id', $transaction_id);
             $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             die('Query Failed: ' . $e->getMessage());
         }

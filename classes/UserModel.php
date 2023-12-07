@@ -59,9 +59,9 @@ class UserModel extends Model {
         $identifier = self::sanitizeInput($identifier);
         try {
             if ($isUsername) {
-                $query = "SELECT username, user_password FROM users WHERE username = :identifier AND is_deleted = 0;";
+                $query = "SELECT user_id, username, user_password FROM users WHERE username = :identifier AND is_deleted = 0;";
             } else {
-                $query = "SELECT username, user_password FROM users WHERE user_id = :identifier AND is_deleted = 0;";
+                $query = "SELECT user_id, username, user_password FROM users WHERE user_id = :identifier AND is_deleted = 0;";
             }
             $stmt = parent::connect()->prepare($query);
             $stmt->bindParam(':identifier', $identifier);

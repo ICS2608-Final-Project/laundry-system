@@ -9,10 +9,8 @@ class ServiceTransactionModel extends Model
 
     //CREATE OPERATION FOR SERVICE TRANSACTION
 
-    public function add_service_transaction(int $service_id, int $transcation_id, int $quantity, float $price)
-    {
+    public function add_service_transaction(int $service_id, int $transcation_id, int $quantity) {
         $quantity = self::sanitizeInput($quantity);
-        $price = self::sanitizeInput($price);
         try {
             $query = "INSERT INTO service_transactions(service_id,transaction_id,quantity,price) 
             VALUES (:service_id,:transaction_id,:quantity,:price);";

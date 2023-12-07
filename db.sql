@@ -34,6 +34,16 @@ CREATE TABLE `customers` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `customers`
+--
+
+LOCK TABLES `customers` WRITE;
+/*!40000 ALTER TABLE `customers` DISABLE KEYS */;
+INSERT INTO `customers` VALUES (1000,'Winfrey','De Vera','+639658108388','w.jamesdevera@gmail.com','Quezon City');
+/*!40000 ALTER TABLE `customers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `payment_methods`
 --
 
@@ -57,6 +67,16 @@ CREATE TABLE `payment_methods` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `payment_methods`
+--
+
+LOCK TABLES `payment_methods` WRITE;
+/*!40000 ALTER TABLE `payment_methods` DISABLE KEYS */;
+INSERT INTO `payment_methods` VALUES (1,'2023-12-03 04:25:31','2023-12-03 04:25:31',0,1004,1004,'Cash on Delivery');
+/*!40000 ALTER TABLE `payment_methods` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `service_transactions`
 --
 
@@ -76,6 +96,16 @@ CREATE TABLE `service_transactions` (
   CONSTRAINT `service_transactions_ibfk_2` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`transaction_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `service_transactions`
+--
+
+LOCK TABLES `service_transactions` WRITE;
+/*!40000 ALTER TABLE `service_transactions` DISABLE KEYS */;
+INSERT INTO `service_transactions` VALUES (2,1,1,3,1050.00);
+/*!40000 ALTER TABLE `service_transactions` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `services`
@@ -105,6 +135,16 @@ CREATE TABLE `services` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `services`
+--
+
+LOCK TABLES `services` WRITE;
+/*!40000 ALTER TABLE `services` DISABLE KEYS */;
+INSERT INTO `services` VALUES (1,'WASH-DRY-FOLD per Bag','Up to 8kgs; max 40-50 items; 3-4 days turn around',350.00,'active','2023-12-03 04:15:43','2023-12-03 04:15:43',1,0,1004,1004);
+/*!40000 ALTER TABLE `services` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `transactions`
 --
 
@@ -127,6 +167,16 @@ CREATE TABLE `transactions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `transactions`
+--
+
+LOCK TABLES `transactions` WRITE;
+/*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
+INSERT INTO `transactions` VALUES (1,1000,1,'2023-12-03','unpaid',0);
+/*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -144,6 +194,16 @@ CREATE TABLE `users` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1007 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1004,'win','$2y$12$medjrKZ1YqDmHIA8jUA8s.xZ.L4A2LJYBOd79jWVyrLAZlZapU/Lq','2023-11-30 01:57:36','2023-11-30 13:10:20',0,1),(1005,'admin','$2y$12$0n3obpvnjDW6cQ3GzC6t6./vEW0TSaBpbzJRpWkll58Rto.mofL/G','2023-11-30 01:59:20','2023-11-30 09:59:20',0,0),(1006,'admin','$2y$12$SRbTHaD9yNJQoCmmqVY2wudpGIbHPSaWWbpCOIPM1pPSSaC8kcwY2','2023-12-03 05:53:57','2023-12-03 13:53:57',0,0);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
