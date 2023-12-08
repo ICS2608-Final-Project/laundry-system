@@ -2,13 +2,14 @@
     $page_title = "Home Page";
     $current_page = 'home';
     $page_description = "";
+    require_once 'config/session.config.php';
     require_once "template/header.php";
 ?>
 <main>
     <section class="hero-section">
         <div class="hero-container">
             <h2 class="hero-text">Spice up your wardrobe on laundry day</h2>
-            <a href="" class="book-button">Book Now</a>
+            <a href="booking.php" class="book-button">Book Now</a>
         </div>
     </section>
     <section class="home-section-2">

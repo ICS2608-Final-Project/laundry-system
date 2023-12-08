@@ -30,7 +30,7 @@
                     <a href="">About Us</a>
                 </li>
                 <li>
-                    <a href="" class="book">Book Now</a>
+                    <a href="booking.php" class="book">Book Now</a>
                 </li>
             </ul>
         </nav>
