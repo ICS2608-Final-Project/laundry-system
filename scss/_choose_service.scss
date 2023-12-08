@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+p {
+    font-weight: 400;
+    font-size: 14px;
+    color: black;
+}
+
+body {
+    background-color: #E5E5E5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.service-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80%;
+    min-height: 670px;
+    border: thin solid black;
+    border-radius: 12px;
+    padding: 1rem;
+    background-color: white;
+}
+
+.service-progress {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    overflow-wrap: break-word;
+}
+
+.prog-1,
+.prog-2,
+.prog-3 {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: auto;
+    width: 30%;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.prog-1 img,
+.prog-2 img,
+.prog-3 img {
+    margin: auto;
+}
+
+.text-1 {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+}
+
+.service-tbl {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    overflow-wrap: break-word;
+}
+
+.service-tbl table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid black;
+}
+
+.service-tbl th,
+.service-tbl td {
+    text-align: left;
+    padding: 8px;
+    background-color: white;
+    color: black;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.service-tbl th {
+    text-align: center;
+    padding: 0.2rem;
+    border: 1px solid #EA5199;
+    background-color: #EA5199;
+    color: white;
+}
+
+.service-tbl th:nth-child(1) {
+    text-align: left;
+    padding-left: 10%;
+}
+
+.service-tbl td:nth-child(1) {
+    font-weight: bold;
+    padding: 1.5rem;
+}
+
+.service-tbl td:nth-child(2),
+.service-tbl td:nth-child(3) {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.service-tbl tr:hover {
+    cursor: pointer;
+}
+
+.service-tbl tr.active {
+    border: 1px solid black;
+}
+
+.service-tbl tr.active td:nth-child(1) {
+    color: #EA5199;
+}
+
+
+button {
+    width: 136px;
+    height: 35px;
+    font-weight: 400;
+    font-size: 18px;
+    color: white;
+    border: none;
+    text-decoration: none;
+    background-color: #EA5199;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #EA5199;
+}
