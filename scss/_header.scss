@@ -47,6 +47,8 @@
 }
 
 .navigation-header {
+  position: sticky;
+  top: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,20 +101,20 @@
     width: 100%;
     background-color: $primary;
     color: $neutral-white;
+    border: 1px solid $primary;
   }
 
   .book:hover {
     background-color: $neutral-white;
     color: $primary;
-    border: 2px solid $primary;
   }
-  
+
   .current {
     color: $primary;
   }
 
   .current:hover {
-    color: $neutral-white;
+    color: $neutral-black;
   }
 }
 

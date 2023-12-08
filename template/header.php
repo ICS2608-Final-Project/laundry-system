@@ -10,7 +10,9 @@
     <header class="navigation-header">
         <nav class="navbar">
             <div class="navleft">
-                <img src="assets/Logo.svg" alt="Logo" class="navlogo" />
+                <a href="">
+                    <img src="assets/Logo.svg" alt="Logo" class="navlogo" />
+                </a>
             </div>
             <a href="javascript:void(0);" class="toggle-button" id="toggle_button">
                 <span class="bar"></span>

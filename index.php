@@ -4,14 +4,35 @@
     $page_description = "";
     require_once "template/header.php";
 ?>
-<div class="pricing-container">
-    <?php
-    require_once 'template/pricing.component.php';
-    $pricing_card = new PricingComponent();
-    $pricing_card->render('Hand Wash', 100, ['hugs', 'kamay', 'paa']);
-    $pricing_card->render('Hand Wash', 100, ['hugs', 'kamay', 'paa']);
-    $pricing_card->render('Hand Wash', 100, ['hugs', 'kamay', 'paa']);
-    ?>
-</div>
-
+<main>
+    <section class="hero-section">
+        <div class="hero-container">
+            <h2 class="hero-text">Spice up your wardrobe on laundry day</h2>
+            <a href="" class="book-button">Book Now</a>
+        </div>
+    </section>
+    <section class="home-section-2">
+        <div class="section-2-left">
+            <div class="">
+                <h3>Reasons to Book with <span>Love Hon</span></h3>
+                <p>At <strong>LoveHon</strong>, we take pride in providing top-notch laundry services tailored to meet your needs. With a commitment to excellence and customer satisfaction, we aim to make the chore of laundry hassle-free for you.</p>
+            </div>
+        </div>
+        <div class="section-2-right">
+            <div class="">
+                <h3>How it Works</h3>
+                <ol>
+                    <li>Schedule Your Laundry Pick-Up</li>
+                    <li>Effortless Clothes Pick-Up</li>
+                    <li>Expert Cleaning Process</li>
+                    <li>Flexible Payment Options</li>
+                    <li>Prompt Delivery of Fresh Clothes</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section">
+        
+    </section>
+</main>
 <?php include_once 'template/footer.php' ?>
