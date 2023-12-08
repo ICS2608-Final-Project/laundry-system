@@ -51,7 +51,7 @@
     flex-wrap: wrap;
     align-content: space-around;
     flex-direction: column;
-    min-height: 50vh;
+    min-height: 75vh;
     gap: 5rem;
     
     .section-2-left {
@@ -112,6 +112,11 @@
     * {
         flex: 1;
     }
+}
+
+.contact-section {
+    background-color: $neutral-white;
+    min-height: 75vh;
 }
 
 @media (min-width: 768px) {
