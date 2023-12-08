@@ -1,149 +1,217 @@
- .hero-section {
-    background-image: url('../assets/background.png');
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    min-height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
+.hero-section {
+  background-image: url("../assets/background.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
 
-    .hero-text {
-        font-size: 1.5rem;
-        line-height: 1.75rem;
-        color: $neutral-white;
-        text-align: center;
-    }
+  .hero-text {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color: $neutral-white;
+    text-align: center;
+  }
 
-    .book-button {
-        text-decoration: none;
-        color: $neutral-white;
-        background-color: $primary;
-        border: 2px solid $primary;
-        padding: .75rem 1rem;
-        border-radius: .5rem;
-        transition: .4s ease-in-out;
-    }
+  .book-button {
+    text-decoration: none;
+    color: $neutral-white;
+    background-color: $primary;
+    border: 2px solid $primary;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: 0.4s ease-in-out;
+  }
 
-    .book-button:hover {
-        text-decoration: none;
-        color: $primary;
-        background-color: transparent;
-    }
+  .book-button:hover {
+    text-decoration: none;
+    color: $primary;
+    background-color: transparent;
+  }
 }
 
 .hero-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 30rem;
 }
 
 .home-section-2 {
+  display: flex;
+  padding: 0 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-around;
+  flex-direction: column;
+  min-height: 75vh;
+  gap: 5rem;
+  background-color: $neutral-white;
+
+  .section-2-left {
     display: flex;
-    padding: 0 2rem;
     justify-content: center;
-    flex-wrap: wrap;
-    align-content: space-around;
-    flex-direction: column;
-    min-height: 75vh;
-    gap: 5rem;
-    
-    .section-2-left {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 3rem;
+    align-items: center;
+    padding-top: 6rem;
 
-        h3 {
-            font-size: 1.75rem;
-            line-height: 2rem;
-            font-weight: 500;
-            margin-bottom: 3rem;
-
-            span {
-                font-weight: 600;
-                color: $primary;
-            }
-        }
-         
-        strong {
-            font-weight: 600;
-        }
-
-        .book-button {
-            text-decoration: none;
-            font-size: 1rem;
-            line-height: 1.25rem;
-            color: $neutral-white;
-            background-color: $primary;
-            padding: .75rem 3rem;
-            border-radius: .5rem;
-        }
+    .section-left-container {
+      max-width: 30rem;
     }
 
-    .section-2-right {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 3rem;
+    h3 {
+      font-size: 1.75rem;
+      line-height: 2rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
 
-        h3 {
-            font-size: 2rem;
-            line-height: 2.35rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        ol {
-            list-style-type: decimal;
-            display: flex;
-            flex-direction: column;
-            gap: .75rem;
-        }
+      span {
+        font-weight: 600;
+        color: $primary;
+      }
     }
 
-
-    * {
-        flex: 1;
+    strong {
+      font-weight: 600;
     }
+
+    .book-button {
+      text-decoration: none;
+      font-size: 1rem;
+      line-height: 1.25rem;
+      color: $neutral-white;
+      background-color: $primary;
+      padding: 0.75rem 3rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .section-2-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 6rem;
+
+    .section-right-container {
+      max-width: 30rem;
+      padding-left: 1.5rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+      line-height: 2.35rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
+    ol {
+      list-style-type: decimal;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+
+  * {
+    flex: 1;
+  }
 }
 
 .contact-section {
-    background-color: $neutral-white;
-    min-height: 75vh;
+  background-color: $neutral-white-2;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  gap: 2rem;
+
+  .contact-left {
+    padding-top: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .contact-left-container {
+      max-width: 30rem;
+      h3 {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1.25rem;
+      }
+    }
+  }
+
+  .contact-right {
+    padding-bottom: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  * {
+    flex: 1;
+  }
 }
 
 @media (min-width: 768px) {
-    .hero-section {
-        .hero-text {
-            font-size: 2.5rem;
-            line-height: 2.75rem;
-        }
-
-        .book-button {
-            font-size: 1.25rem;
-            line-height: 1.5rem;
-            padding: .75rem 3rem;
-        }
+  .hero-section {
+    .hero-text {
+      font-size: 2.5rem;
+      line-height: 2.75rem;
     }
 
-
-    .home-section-2 {
-        flex-direction: row;
-
-        .section-2-left {
-            padding-top: 0;
-        }
-
-        .section-2-right {
-            text-align: left;
-            padding-bottom: 0;
-        }
+    .book-button {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      padding: 0.75rem 3rem;
     }
+  }
+
+  .home-section-2 {
+    flex-direction: row;
+
+    .section-2-left {
+      padding-top: 0;
+    }
+
+    .section-2-right {
+      text-align: left;
+      padding-bottom: 0;
+    }
+  }
+
+  .contact-section {
+    flex-direction: row;
+
+    .contact-left {
+      .contact-left-container {
+        h3 {
+          font-size: 2.25rem; /* 36px */
+          line-height: 2.5rem;
+        }
+
+        p {
+          font-size: 1.25rem; /* 20px */
+          line-height: 1.75rem;
+        }
+      }
+    }
+    .contact-left,
+    .contact-right {
+      padding: 0;
+    }
+  }
 }

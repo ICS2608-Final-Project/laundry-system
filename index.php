@@ -13,13 +13,13 @@
     </section>
     <section class="home-section-2">
         <div class="section-2-left">
-            <div class="">
+            <div class="section-left-container">
                 <h3>Reasons to Book with <span>Love Hon</span></h3>
                 <p>At <strong>LoveHon</strong>, we take pride in providing top-notch laundry services tailored to meet your needs. With a commitment to excellence and customer satisfaction, we aim to make the chore of laundry hassle-free for you.</p>
             </div>
         </div>
         <div class="section-2-right">
-            <div class="">
+            <div class="section-right-container">
                 <h3>How it Works</h3>
                 <ol>
                     <li>Schedule Your Laundry Pick-Up</li>
@@ -32,7 +32,18 @@
         </div>
     </section>
     <section class="contact-section">
-        
+        <div class="contact-left">
+            <div class="contact-left-container">
+                <h3>Have a question for us?</h3>
+                <p>Have a question, suggestion, or just want to say hello? We'd love to hear from you! Our team is ready to assist.</p>
+            </div>
+
+        </div>
+        <div class="contact-right">
+            <?php 
+            require_once 'template/contact.form.php';
+            ?>
+        </div>
     </section>
 </main>
 <?php include_once 'template/footer.php' ?>

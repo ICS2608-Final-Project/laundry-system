@@ -1,0 +1,69 @@
+@import "colors";
+@import "typography";
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  border-radius: 1rem;
+  padding: 1.75rem;
+  min-width: 20rem;
+  max-width: 25rem;
+  background-color: $neutral-white;
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $neutral-black;
+  }
+
+  .form-input {
+    width: auto;
+    font-family: $poppins;
+    font-size: 1rem;
+    padding: 0.25rem;
+    line-height: 1.25rem;
+    border-radius: 0.25rem;
+    border: 1px solid $neutral-black;
+  }
+
+  .form-input:active,
+  .form-input:focus {
+    outline: 2px solid $primary;
+  }
+
+  .submit-button {
+    margin-top: 1rem;
+    font-family: $poppins;
+    color: $neutral-white;
+    background-color: $primary;
+    border: 2px solid $primary;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    padding: 0.25rem 2rem;
+    cursor: pointer;
+  }
+
+  .submit-button:hover {
+    color: $primary;
+    background-color: $neutral-white;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-form {
+    h3 {
+      font-size: 1.875rem; /* 30px */
+      line-height: 2.25rem; /* 36px */
+    }
+  }
+  .form-input {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+  }
+}
