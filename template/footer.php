@@ -19,6 +19,6 @@
             <p class="footer-legal">&copy; 2023 LoveHon. All rights reserved</p>
         </div>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

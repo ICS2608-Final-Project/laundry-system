@@ -3,7 +3,12 @@
     $page_description = "";
     require_once "template/header.php";
 ?>
-
-<h1>Hello</h1>
+<!-- <div class="pricing-container">
+    <?php
+    // require_once 'template/pricing.component.php';
+    // $pricing_card = new PricingComponent();
+    // $pricing_card->render('Hand Wash', 100, ['hugs', 'kamay', 'paa']);
+    ?>
+</div> -->
 
 <?php include_once 'template/footer.php' ?>
