@@ -58,13 +58,6 @@
   display: flex;
 }
 
-.current {
-  color: $primary;
-}
-
-.current:hover {
-  color: $neutral-white;
-}
 
 .nav-items {
   display: none;
@@ -76,6 +69,7 @@
   top: 4rem;
   padding-top: 1rem;
   background-color: $neutral-white;
+  z-index: 50;
 
   li {
     display: flex;
@@ -111,6 +105,14 @@
     background-color: $neutral-white;
     color: $primary;
     border: 2px solid $primary;
+  }
+  
+  .current {
+    color: $primary;
+  }
+
+  .current:hover {
+    color: $neutral-white;
   }
 }
 
@@ -148,5 +150,8 @@
       padding: .75rem 1.25rem;  
       border-radius: .5rem;
     }
+  }
+  .navlogo {
+    max-width: 15rem;
   }
 }
