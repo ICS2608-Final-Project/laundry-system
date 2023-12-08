@@ -3,11 +3,11 @@
 class PricingComponent {
 
     function render($service_name, $service_price, $inclusions) {
-        echo '<div class="pricing">';
-        echo '<h1>'. ucwords($service_name) . '</h1>';
-        echo '<h2>₱'. $service_price . '</h2>';
-        echo '<a href="#" class="bookbutton">Book Now</a>';
-        echo '<hr class="thematic-break">';
+        echo '<div class="pricing-card">';
+        echo '<h3>'. ucwords($service_name) . '</h3>';
+        echo '<h4 class="service-price">₱'. $service_price . '</h4>';
+        echo '<a href="#" class="book-button">Book Now</a>';
+        echo '<span class="thematic-break"> </span>';
         echo '<ul>';
         foreach($inclusions as $inclusion) {
             echo '<li>'. $inclusion .'</li>';

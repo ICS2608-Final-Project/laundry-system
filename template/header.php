@@ -19,7 +19,7 @@
             </a>
             <ul class="nav-items" id="navItems">
                 <li>
-                    <a href="">Home</a>
+                    <a href="" class="<?php if ($current_page == 'home') { echo 'current'; } ?>">Home</a>
                 </li>
                 <li>
                     <a href="">Pricing</a>

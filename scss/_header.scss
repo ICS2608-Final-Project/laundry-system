@@ -58,6 +58,14 @@
   display: flex;
 }
 
+.current {
+  color: $primary;
+}
+
+.current:hover {
+  color: $neutral-white;
+}
+
 .nav-items {
   display: none;
   flex-direction: column;
