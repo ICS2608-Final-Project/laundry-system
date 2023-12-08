@@ -5,49 +5,48 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
-
-.navbar {
     li,
     a {
+      margin-top: 2rem;
       font-weight: 400;
-      font-size: 18px;
+      font-size: 16.5px;
       color: black;
       text-decoration: none;
     }
   
-    button {
-      width: 136px;
-      height: 35px;
-      font-weight: 400;
-      font-size: 18px;
-      color: white;
-      border: none;
-      text-decoration: none;
+    .book-now-btn {
+      margin-top: 1.5rem;
+      font-size: 16.5px;
+      height: 2.5rem;
+      width: 8rem;
       background-color: #EA5199;
-      border-radius: 8px;
+      color: #FAFAFA;
+      border: none;
+      border-radius: 4px;
     }
   
-    button:hover {
+    .book-now-btn:hover {
       cursor: pointer;
     }
   
-    button:active {
+    .book-now-btn:active {
       background-color: #EA5199;
     }
-  }
+
   
   .navbar {
+    top: -2rem;
+    position: absolute;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #FAFAFA;
-    max-height: 5rem;
   }
   
   .navlogo {
+    margin-top: 1rem;
     position: relative;
-    top: -0.25rem;
+    z-index: 9;
   }
   
   .navright {
@@ -73,20 +72,20 @@ body {
   .navlinks > li > a:hover {
     color: #EA5199;
   }
-
   .container1{
-position: relative;
+  position: relative;
   text-align: center;
   color: white;
-  margin-top: 20px;
   }
 
   .bg {
+    margin-top: 5rem;
     width: 100%;
     height: auto;
   }
 
   .desc {
+    margin-top: 2rem;
     position: absolute;
     font-size: 20px;
     top: 50%;
@@ -100,6 +99,157 @@ position: relative;
     color: #FAFAFA;
     border-radius: 4px;
 }
+@media(max-width: 930px){
+
+  .navbar{
+    position: relative;
+  }
+
+  li,
+  a {
+    margin-top: 2rem;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .book-now-btn {
+    font-size: 12px;
+    color: white;
+    height: 2rem;
+    width: 7rem;
+    background-color: rgb(234, 81, 153);
+    border: none;
+    border-radius: 8px;
+  }
+
+  .bg{
+    display: none;
+  }
+
+  .book-now-btn:hover {
+    cursor: pointer;
+  }
+
+  .book-now-btn:active {
+    background-color: #EA5199;
+  }
+  .desc{
+    margin-top: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .desc h1{
+    color: black;
+    font-size: 15px;
+  }
+
+  .book-now-btn {
+    padding: 8px 16px;
+    background-color: #EA5199;
+    color: #FAFAFA;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+
+}
+
+
+.aboutpage{
+  padding: 5rem;
+}
+.col{
+  justify-content: center;
+  align-items: center;
+}
+.grp1{
+  margin-left: 3rem;
+}
+.Reasons{
+  font-size: 48px;
+  margin-top: 4.8rem;
+  font-weight: 500;
+}
+
+.grp2{
+  margin-left: 9rem;
+}
+h1{
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 2.8rem;
+}
+.Make, .num{
+  font-size: 20px;
+  font-weight: 100;
+}
+@media (max-width: 920px){
+  .Reasons{
+      font-size: 36px;
+      font-weight: 500;
+  }
+  .btn1{
+      font-size: 20px;
+      color: white;
+      height: 2rem;
+      width: 7rem;
+      margin-bottom: 3rem ;
+      background-color: rgb(234, 81, 153);
+      border: none;
+      border-radius: 8px;
+  }
+  h1{
+      font-size: 30px;
+      font-weight: 600;
+      margin-top: 1rem;
+  }
+  .Make, .num{
+      font-size: 20px;
+      font-weight: 100;
+  }
+  .grp1 , .grp2{
+      margin: auto;
+  } 
+}
+
+@media (max-width: 620px){
+  .Reasons{
+      font-size: 26px;
+      font-weight: 500;
+  }
+  .btn1{
+      font-size: 15px;
+      color: white;
+      height: 2rem;
+      width: 7rem;
+      margin-bottom: 3rem ;
+      background-color: rgb(234, 81, 153);
+      border: none;
+      border-radius: 8px;
+  }
+  h1{
+      font-size: 28px;
+      font-weight: 600;
+      margin-top: 1rem;
+  }
+  .Make, .num{
+      font-size: 17px;
+      font-weight: 100;
+  } 
+}
+
+
+
+
+
+
+
+
+
 
   footer {
     margin-top: auto;
