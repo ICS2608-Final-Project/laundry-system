@@ -9,11 +9,11 @@
     $services = (new ServicesModel())->fetch_services();
 ?>
 <main class="booking-section">
-    <form action="" class="booking-form">
+    <form action="book.service.php" class="booking-form" method="post">
         <div class="">
             <?php require_once 'template/progressbar.component.php'; ?>
         </div>
-        <select name="service" id="service">
+        <select name="service_id" id="service">
             <option selected disabled>-- Select a Service --</option>
             <?php 
             foreach($services as $service) {

@@ -1,0 +1,15 @@
+@import 'colors';
+@import 'typography';
+
+.name-input {
+    display: flex;
+
+    input {
+        font-family: $poppins;
+        color: $primary;
+    }
+    * {
+        flex: 1;
+    }
+
+}
