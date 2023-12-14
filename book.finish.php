@@ -5,12 +5,15 @@ $page_description = "";
 require_once 'config/session.config.php';
 require_once "template/header.php";
 require_once 'classes/ServicesModel.php';
+require_once 'classes/PaymentMethodModel.php';
 $progress_status = ['pickup', 'review'];
 $service_model = new ServicesModel();
 
 $orders = $_SESSION['service_order'];
 $pickup_details = $_SESSION['pickup_details'];
 $total_price = 0;
+
+$payment_method = (new PaymentMethodModel())->fetch_payment_method($pickup_details['payment_method'])['payment_method_name'];
 
 ?>
 <main class="booking-section">
@@ -55,7 +58,7 @@ $total_price = 0;
             <p>Customer Name: <?= $pickup_details['first_name'] . ' ' .  $pickup_details['last_name'] ?></p>
             <p>Mobile No. <?= $pickup_details['mobile_number'] ?></p>
             <p>Email: <?= $pickup_details['email'] ?></p>
-            <p>Payment method: <?= $pickup_details['payment_method'] ?></p>
+            <p>Payment method: <?= $payment_method ?></p>
             <p>Pick up address: <?= $pickup_details['address'] ?></p>
         </div>
         <form action="" style="align-self: start; margin-left: 1rem;">
