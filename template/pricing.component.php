@@ -16,20 +16,17 @@ class PricingComponent {
     //     echo '</div>';
     // }
 
-    function render($service_name, $service_price, $inclusions) {
+    function render($service_name, $service_price, $service_description) {
     ?>
     <div class="pricing-card">
-        <div class="service-details">
-            <h3><?= ucwords($service_name) ?></h3>
-            <h4 class="service-price">₱<?= $service_price ?></h4>
-            <a href="#" class="book-button">Book Now</a>
+        <div class="top">
+            <div class="service-details">
+                <h3><?= ucwords($service_name) ?></h3>
+                <h4 class="service-price">₱<?= $service_price ?></h4>
+            </div>
+            <a href="booking.php" class="book-button">Book Now</a>
         </div>
-        <span class="thematic-break"> </span>
-        <ul>
-            <?php foreach ($inclusions as $inclusion): ?>
-                <li><?= $inclusion ?></li>
-            <?php endforeach; ?>
-        </ul>
+        <p class="service-description"><?php echo $service_description ?></p>
     </div>
     <?php
     }
