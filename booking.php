@@ -13,14 +13,18 @@
         <div class="">
             <?php require_once 'template/progressbar.component.php'; ?>
         </div>
-        <select name="service_id" id="service">
-            <option selected disabled>-- Select a Service --</option>
-            <?php 
-            foreach($services as $service) {
-                echo "<option value=". $service['service_id'] . ">" . ucwords($service['service_name']) . "</option>";
-            }
-            ?>
-        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>Services</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="services-body">
+            </tbody>
+
+        </table>
         <div class="service-info">
             <p class="service-price" id="servicePrice"></p>
             <p class="service-description" id="serviceDescription"></p>
@@ -40,19 +44,36 @@
             }
             ?>
         ];
+        console.log(services);
 
-        const service = document.getElementById('service');
+        const chooseServiceTable = document.getElementById('services-body');
 
-        service.addEventListener('change', () => {
-            services.forEach((serviceInfo) => {
-                const servicePrice = document.getElementById('servicePrice');
-                const serviceDescription = document.getElementById('serviceDescription');
-                if (serviceInfo['serviceId'] == service.value) {
-                    servicePrice.innerHTML = "P" +serviceInfo['servicePrice'];
-                    serviceDescription.innerHTML = serviceInfo['serviceDescription'];
-                }
-            });
-        });
+        services.forEach((service) => {
+            const newRow = document.createElement('tr');
+            const serviceName = document.createElement('td');
+            const serviceQuantity = document.createElement('td');
+            const servicePrice = document.createElement('td');
+
+            serviceName.innerHTML = service['serviceName'];
+            serviceQuantity.appendChild(createQuantitySelect(service['servivceName'], 'quantity'));
+
+            chooseServiceTable.appendChild(newRow);
+            newRow.appendChild(serviceName);
+            newRow.appendChild(serviceQuantity);
+            newRow.appendChild(servicePrice);
+        })
+
+        function createQuantitySelect(selectName, selectClass) {
+            const select = document.createElement('select');
+            select.setAttribute('class', selectClass);
+            select.setAttribute('name', selectName);
+            for(i = 0; i < 10; i++) {
+                const option = document.createElement('option');
+                option.innerHTML = i+1;
+                select.appendChild(option);
+            }
+            return select;
+        }
     </script>
 </main>
 <?php include_once 'template/footer.php' ?>
