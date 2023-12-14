@@ -1,94 +1,12 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-}
-
-p {
-    font-weight: 400;
-    font-size: 14px;
-    color: black;
-}
-
-main {
-    background-color: #E5E5E5;
+.customer-details {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: .25rem;
     padding: 1rem;
-    margin: 10rem 5rem;
-}
-
-.service-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border: thin solid black;
-    border-radius: 12px;
-    padding: 1rem;
-    background-color: white;
-}
-
-.service-progress {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    overflow-wrap: break-word;
-}
-
-.prog-1,
-.prog-2,
-.prog-3 {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    height: auto;
-    width: 30%;
-    margin: 0.5rem;
-    text-align: center;
-}
-
-.prog-1 img,
-.prog-2 img,
-.prog-3 img {
-    margin: auto;
-}
-
-.booking-table {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    border: thin solid black;
-    border-radius: 12px;
-    padding: 1rem;
-    background-color: white;
-}
-
-.booking-table thead {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.booking-table tr {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items:flex-start;
-    text-align: left;
-}
-
-.th1,
-.th2,
-.th3,
-.th4 {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    height: auto;
-    margin: 0.1rem;
-    text-align: center;
+    justify-self: start;
+    p {
+        font-size: .875rem;
+        line-height: 1rem;
+        opacity: 75%;
+    }
 }

@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </select>
             </div>
             <div class="location-input form-input">
-                <textarea name="Pickup and Delivery Address" id="" rows="3" placeholder="Enter pickup location"></textarea>
+                <textarea name="address" id="" rows="3" placeholder="Enter pickup location"></textarea>
             </div>
             <button type="submit">Continue</button>
         </div>
