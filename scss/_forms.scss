@@ -1,0 +1,41 @@
+@import "typography";
+@import "colors";
+
+input,
+textarea {
+  font-family: $poppins;
+  font-size: 1rem;
+  padding: 0.25rem;
+  line-height: 1.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid $neutral-black;
+}
+
+input:active,
+input:focus,
+textarea:active,
+textarea:focus {
+  outline: 2px solid $primary;
+}
+
+select,
+option {
+  font-family: $poppins;
+}
+
+select {
+  cursor: pointer;
+  font-size: .875rem;
+  line-height: 1.25;
+  background-color: $neutral-white;
+  border-radius: 0.5rem;
+  padding: 0.25rem 1rem;
+}
+
+@media (min-width: 768px) {
+  input,
+  textarea {
+    font-size: 1rem; /* 20px */
+    line-height: 1.5rem; /* 28px */
+  }
+}
