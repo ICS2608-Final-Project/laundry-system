@@ -13,14 +13,18 @@
         <div class="">
             <?php require_once 'template/progressbar.component.php'; ?>
         </div>
-        <select name="service_id" id="service">
-            <option selected disabled>-- Select a Service --</option>
-            <?php 
-            foreach($services as $service) {
-                echo "<option value=". $service['service_id'] . ">" . ucwords($service['service_name']) . "</option>";
-            }
-            ?>
-        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>Services</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="services-body">
+            </tbody>
+
+        </table>
         <div class="service-info">
             <p class="service-price" id="servicePrice"></p>
             <p class="service-description" id="serviceDescription"></p>
@@ -41,18 +45,62 @@
             ?>
         ];
 
-        const service = document.getElementById('service');
+        const chooseServiceTable = document.getElementById('services-body');
 
-        service.addEventListener('change', () => {
-            services.forEach((serviceInfo) => {
-                const servicePrice = document.getElementById('servicePrice');
-                const serviceDescription = document.getElementById('serviceDescription');
-                if (serviceInfo['serviceId'] == service.value) {
-                    servicePrice.innerHTML = "P" +serviceInfo['servicePrice'];
-                    serviceDescription.innerHTML = serviceInfo['serviceDescription'];
-                }
+        services.forEach((service) => {
+            const newRow = document.createElement('tr');
+            const serviceNameColumn = document.createElement('td');
+            const serviceQuantityColumn = document.createElement('td');
+            const servicePriceColumn = document.createElement('td');
+
+            const serviceName = document.createElement('h5', { id: 'serviceName' });
+            const servicePriceInfo = document.createElement("p", { id: 'servicePrice' });
+            const serviceDescription = document.createElement('p', { id: 'serviceDescriptionn' });
+
+            serviceName.innerHTML = service['serviceName'];
+            servicePriceInfo.innerHTML = 'P' + service['servicePrice'];
+            serviceDescription.innerHTML = service['serviceDescription'];
+
+            serviceNameColumn.appendChild(serviceName);
+            serviceNameColumn.appendChild(servicePriceInfo);
+            serviceNameColumn.appendChild(serviceDescription);
+
+            const selectQuantity = createQuantitySelect(`${service['serviceId']}`, 'quantity', `quantity_${service['serviceId']}`);
+
+
+            serviceQuantityColumn.appendChild(selectQuantity);
+
+            const servicePrice = document.createElement('p', { class: 'service-price', id: `price_${service['serviceId']}`});
+
+            servicePrice.innerHTML = 'P0';
+            
+            servicePriceColumn.appendChild(servicePrice);
+
+            
+            selectQuantity.addEventListener('change', () => {
+                servicePrice.innerHTML = `P${service['servicePrice'] * selectQuantity.value}`;
             });
-        });
+
+
+            chooseServiceTable.appendChild(newRow);
+            newRow.appendChild(serviceNameColumn);
+            newRow.appendChild(serviceQuantityColumn);
+            newRow.appendChild(servicePriceColumn);
+
+        })
+
+        function createQuantitySelect(selectName, selectClass, selectId) {
+            const select = document.createElement('select');
+            select.setAttribute('class', selectClass);
+            select.setAttribute('name', selectName);
+            select.setAttribute('id', selectId);
+            for(i = 0; i < 10; i++) {
+                const option = document.createElement('option');
+                option.innerHTML = i+0;
+                select.appendChild(option);
+            }
+            return select;
+        }
     </script>
 </main>
 <?php include_once 'template/footer.php' ?>
