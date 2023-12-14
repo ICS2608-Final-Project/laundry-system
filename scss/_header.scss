@@ -6,7 +6,6 @@
     height: auto;
     max-width: 12rem;
     position: relative;
-    z-index: 2;
   }
 
   .dummy-btn {
@@ -54,6 +53,7 @@
   align-items: center;
   background-color: $neutral-white;
   padding: 0 1rem;
+  z-index: 500;
 }
 
 .nav-items.active {
