@@ -19,15 +19,11 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    border-radius: 1rem;
     gap: 2rem;
     padding: 2rem;
     background-color: $neutral-white;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
-    th {
-        font-weight: 600;
-    }
 
     select, option {
         font-family: $poppins;
@@ -57,8 +53,34 @@
         color: $primary;
     }
   }
+  
+  table {
+    overflow-x: auto;
+    font-size: 0.875rem; 
+    line-height: 1.25rem;
+    th, td  {
+      padding: .25rem 1rem;
+    }
+    thead {
+      background-color: $primary;
+      font-weight: 600;
+      color: $neutral-white;
+
+    }
+  }
 
   .service-info {
     justify-self: unset;
+  }
+}
+
+@media (min-width: 640px) {
+  .booking-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .booking-form {
+    border-radius: 1rem;
   }
 }
