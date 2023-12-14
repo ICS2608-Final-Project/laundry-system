@@ -14,6 +14,13 @@ if (!isset($_SESSION['service_order'])) {
     header("Location: booking.php");
     die();
 } 
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $_SESSION['pickup_details'] = $_POST;
+    header("Location: book.finish.php");
+    die();
+}
+
 ?>
 <main class="booking-section">
     <form action="" class="pickup-form" method="post">
