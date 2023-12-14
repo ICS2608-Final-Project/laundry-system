@@ -8,22 +8,18 @@ class TransactionModel extends Model
 
     //CREATE
 
-    public function add_transaction(int $customer_id, int $payment_method_id, string $transaction_date, string $transaction_status, float $total_price)
+    public function add_transaction(int $customer_id, int $payment_method_id, string $transaction_status)
     {
         $customer_id = self::sanitizeInput($customer_id);
         $payment_method_id = self::sanitizeInput($payment_method_id);
-        $transaction_date = self::sanitizeInput($transaction_date);
         $transaction_status = self::sanitizeInput($transaction_status);
-        $total_price = self::sanitizeInput($total_price);
         try {
-            $query = "INSERT INTO transactions(customer_id,payment_method_id,transaction_date,transaction_status,total_price) 
-            VALUES (:customer_id,:payment_method_id,:transaction_date,:transaction_status,:total_price);";
+            $query = "INSERT INTO transactions(customer_id, payment_method_id,transaction_status) 
+            VALUES (:customer_id,:payment_method_id,:transaction_status);";
             $stmt = parent::connect()->prepare($query);
             $stmt->bindParam(':customer_id', $customer_id);
             $stmt->bindParam(':payment_method_id', $payment_method_id);
-            $stmt->bindParam(':transaction_date', $transaction_date);
             $stmt->bindParam(':transaction_status', $transaction_status);
-            $stmt->bindParam(':total_price', $total_price);
             $stmt->execute();
         } catch (PDOException $e) {
             die('Query Failed: ' . $e->getMessage());
