@@ -1,58 +1,71 @@
-@import 'colors';
-
+@import "colors";
 
 .pricing-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 768px) {
-    .pricing-container {
-        flex-direction: row;
-        gap: 2rem;
-    }
+  .pricing-container {
+    flex-direction: row;
+    gap: 2rem;
+  }
 }
 
 .pricing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  border-radius: 0.75rem;
+  max-width: 250px;
+  flex: 1;
+  // border: 1px solid red;
+  gap: 1rem;
+  background-color: $neutral-white;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+
+  .service-details {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 3rem;
-    border-radius: .75rem;
-    max-width: 250px;
-    // border: 1px solid red;
-    gap: 1rem;
-    background-color: $neutral-white;
-    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+    gap: .5rem;
+    flex: 1;
     h3 {
-        font-size: 1.5rem;
-        line-height: 1.75;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-align: center;
+      flex: 1;
     }
+  }
 
-    .service-price {
-        font-size: 2.5rem;
-        line-height: 2.75rem;
-    }
+  .service-price {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    flex: 1;
+  }
 
-    .book-button {
-        text-decoration: none;
-        color: $neutral-white;
-        background-color: $primary;
-        padding: 1rem 2rem;
-        border: 2px solid $neutral-white;
-        border-radius: .5rem;
-    }
+  .book-button {
+    text-decoration: none;
+    color: $neutral-white;
+    background-color: $primary;
+    padding: 1rem 2rem;
+    border: 2px solid $neutral-white;
+    border-radius: 0.5rem;
+  }
 
-    .book-button:hover {
-        color: $primary;
-        background-color: $neutral-white;
-        border: 2px solid $primary;
-    }
+  .book-button:hover {
+    color: $primary;
+    background-color: $neutral-white;
+    border: 2px solid $primary;
+  }
 
-    .thematic-break {
-        position: relative;
-        height: 3px;
-        width: 125%;
-        background-color: $primary;
-    }
+  .thematic-break {
+    position: relative;
+    height: 3px;
+    width: 125%;
+    background-color: $primary;
+  }
 }

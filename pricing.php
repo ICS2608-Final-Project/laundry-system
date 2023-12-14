@@ -5,6 +5,10 @@
     $page_description = "";
     require_once 'config/session.config.php';
     require_once "template/header.php";
+
+    require_once 'classes/ServicesModel.php';
+    $service = new ServicesModel();
+    $services = $service->fetch_services();
 ?>
 <main>
     <div class="container">
@@ -19,39 +23,14 @@
         </div>
     </div>
     <div class="pricing-cards">
-        <div class="pricing-card">
-            <h2>Dry Clean Service</h2>
-            <h1>₱500 - ₱800*</h1>
-            <a href="#" class="btn">Select</a>
-            <ul>
-                <li>For Barong, Gown, Dress</li>
-                <li><i>*Price depends on size</i></li>
-            </ul>
-        </div>
-        <div class="pricing-card">
-            <h2>Full Service (8KG)</h2>
-            <h1>₱195</h1>
-            <a href="#" class="btn">Select</a>
-            <div class="divider-line1"></div>
-            <ul>
-                <li>Wash</li>
-                <li>Dry</li>
-                <li>Fold</li>
-                <li>Detergent and Fabric Conditioner Included</li>
-            </ul>
-        </div>
-        <div class="pricing-card">
-            <h2>Full Service (10KG)</h2>
-            <h1>₱205</h1>
-            <a href="#" class="btn">Select</a>
-            <div class="divider-line2"></div>
-            <ul>
-                <li>Wash</li>
-                <li>Dry</li>
-                <li>Fold</li>
-                <li>Detergent and Fabric Conditioner Included</li>
-            </ul>
-        </div>
+        <?php 
+        require_once 'template/pricing.component.php';
+        $pricing = new PricingComponent();
+        for($i = 0;$i < 3; $i++) {
+            $pricing->render($services[$i]['service_name'], $services[$i]['service_price'], ['Hello', 'Hi']);
+        }
+        ?>
+
     </div>
 </main>
 <?php include_once 'template/footer.php' ?>
