@@ -1,0 +1,34 @@
+@import 'colors';
+
+.order-success {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+
+    .order-success-container {
+        filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+        background-color: $neutral-white;
+        border-radius: 1rem;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid black;
+            padding: .5rem 1rem;
+        }
+
+        .description {
+            padding: .5rem 1rem
+
+        }
+    }
+}
