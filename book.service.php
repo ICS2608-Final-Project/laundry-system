@@ -15,6 +15,11 @@ foreach($_POST as $key => $value) {
     }
 }
 
+if (empty($services)) {
+    header("Location: booking.php");
+    die();
+}
+
 $_SESSION['service_order'] = $services;
 header("Location: book.pickup.php");
 die();
