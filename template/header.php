@@ -24,7 +24,7 @@
                     <a href="index.php" class="<?php if ($current_page == 'home') { echo 'current'; } ?>">Home</a>
                 </li>
                 <li>
-                    <a href="pricing.php">Pricing</a>
+                    <a href="pricing.php" class="<?php if ($current_page == 'pricing') { echo 'current'; } ?>">Pricing</a>
                 </li>
                 <li>
                     <a href="booking.php" class="book">Book Now</a>
