@@ -9,6 +9,11 @@ require_once 'config/session.config.php';
 require_once "template/header.php";
 
 $progress_status = ['pickup'];
+
+if (!isset($_SESSION['service_order'])) {
+    header("Location: booking.php");
+    die();
+} 
 ?>
 <main class="booking-section">
     <form action="" class="pickup-form" method="post">
