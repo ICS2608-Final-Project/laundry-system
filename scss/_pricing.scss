@@ -1,0 +1,53 @@
+@import 'colors';
+@import 'typography';
+
+.pricing-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem 4rem;
+    min-height: 80vh;
+}
+
+.pricing-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    h2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .intro {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+.pricing-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .pricing-cards {
+        flex-direction: row;
+        .pricing-card {
+            max-width: 15.625rem;
+        }
+    }
+}
+@media (min-width: 1024px) {
+    .pricing-hero {
+        max-width: 75%;
+    }
+}
