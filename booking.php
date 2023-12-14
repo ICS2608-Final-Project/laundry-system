@@ -44,7 +44,6 @@
             }
             ?>
         ];
-        console.log(services);
 
         const chooseServiceTable = document.getElementById('services-body');
 
@@ -66,7 +65,7 @@
             serviceNameColumn.appendChild(servicePriceInfo);
             serviceNameColumn.appendChild(serviceDescription);
 
-            const selectQuantity = createQuantitySelect(`quantity_${service['serviceId']}`, 'quantity', `quantity_${service['serviceId']}`);
+            const selectQuantity = createQuantitySelect(`${service['serviceId']}`, 'quantity', `quantity_${service['serviceId']}`);
 
 
             serviceQuantityColumn.appendChild(selectQuantity);
