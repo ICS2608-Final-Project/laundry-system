@@ -50,26 +50,54 @@
 
         services.forEach((service) => {
             const newRow = document.createElement('tr');
-            const serviceName = document.createElement('td');
-            const serviceQuantity = document.createElement('td');
-            const servicePrice = document.createElement('td');
+            const serviceNameColumn = document.createElement('td');
+            const serviceQuantityColumn = document.createElement('td');
+            const servicePriceColumn = document.createElement('td');
+
+            const serviceName = document.createElement('h5', { id: 'serviceName' });
+            const servicePriceInfo = document.createElement("p", { id: 'servicePrice' });
+            const serviceDescription = document.createElement('p', { id: 'serviceDescriptionn' });
 
             serviceName.innerHTML = service['serviceName'];
-            serviceQuantity.appendChild(createQuantitySelect(service['servivceName'], 'quantity'));
+            servicePriceInfo.innerHTML = 'P' + service['servicePrice'];
+            serviceDescription.innerHTML = service['serviceDescription'];
+
+            serviceNameColumn.appendChild(serviceName);
+            serviceNameColumn.appendChild(servicePriceInfo);
+            serviceNameColumn.appendChild(serviceDescription);
+
+            const selectQuantity = createQuantitySelect(`quantity_${service['serviceId']}`, 'quantity', `quantity_${service['serviceId']}`);
+
+
+            serviceQuantityColumn.appendChild(selectQuantity);
+
+            const servicePrice = document.createElement('p', { class: 'service-price', id: `price_${service['serviceId']}`});
+
+            servicePrice.innerHTML = 'P0';
+            
+            servicePriceColumn.appendChild(servicePrice);
+
+            
+            selectQuantity.addEventListener('change', () => {
+                servicePrice.innerHTML = `P${service['servicePrice'] * selectQuantity.value}`;
+            });
+
 
             chooseServiceTable.appendChild(newRow);
-            newRow.appendChild(serviceName);
-            newRow.appendChild(serviceQuantity);
-            newRow.appendChild(servicePrice);
+            newRow.appendChild(serviceNameColumn);
+            newRow.appendChild(serviceQuantityColumn);
+            newRow.appendChild(servicePriceColumn);
+
         })
 
-        function createQuantitySelect(selectName, selectClass) {
+        function createQuantitySelect(selectName, selectClass, selectId) {
             const select = document.createElement('select');
             select.setAttribute('class', selectClass);
             select.setAttribute('name', selectName);
+            select.setAttribute('id', selectId);
             for(i = 0; i < 10; i++) {
                 const option = document.createElement('option');
-                option.innerHTML = i+1;
+                option.innerHTML = i+0;
                 select.appendChild(option);
             }
             return select;
