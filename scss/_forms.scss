@@ -25,16 +25,17 @@ option {
 
 select {
   cursor: pointer;
-  font-size: 1rem;
-  line-height: 1.75rem;
+  font-size: .875rem;
+  line-height: 1.25;
   background-color: $neutral-white;
   border-radius: 0.5rem;
   padding: 0.25rem 1rem;
 }
+
 @media (min-width: 768px) {
   input,
   textarea {
-    font-size: 1.25rem; /* 20px */
-    line-height: 1.75rem; /* 28px */
+    font-size: 1rem; /* 20px */
+    line-height: 1.5rem; /* 28px */
   }
 }

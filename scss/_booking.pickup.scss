@@ -1,26 +1,66 @@
-@import 'colors';
-@import 'typography';
-
+@import "colors";
+@import "typography";
 
 .pickup-form {
-    background-color: $neutral-white;
-    width: 100%;
-    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: $neutral-white;
+  padding: 2rem;
+  width: 100%;
+  filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))
+    drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
 
-    button {
-      font-family: $poppins;
-      cursor: pointer;
-      border: 2px solid $primary;
-      background-color: $primary;
-      padding: 0.5rem 1.5rem;
-      border-radius: 0.5rem;
-      color: $neutral-white;
+  button {
+    font-family: $poppins;
+    cursor: pointer;
+    border: 2px solid $primary;
+    background-color: $primary;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    color: $neutral-white;
+  }
+
+  .name {
+    h4 {
+      margin-bottom: 0.5rem;
     }
-}
+  }
 
-.name-input {
+  .pickup-inputs {
     display: flex;
     flex-direction: column;
-    gap: .25rem;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .name-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .pickup-form {
+    border-radius: 1rem;
+    width: auto;
+
+    .name-input {
+      flex-direction: row;
+    }
+  }
+
+  .form-input {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
