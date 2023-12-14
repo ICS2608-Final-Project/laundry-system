@@ -12,8 +12,6 @@ $orders = $_SESSION['service_order'];
 $pickup_details = $_SESSION['pickup_details'];
 $total_price = 0;
 
-print_r($pickup_details)
-
 ?>
 <main class="booking-section">
     <div class="booking-form">
@@ -52,16 +50,16 @@ print_r($pickup_details)
                 </tr>
             </tbody>
         </table>
-        <div class="">
-            <p><?= $pickup_details['first_name'] ?></p>
-            <p><?= $pickup_details['last_name'] ?></p>
-            <p><?= $pickup_details['mobile_number'] ?></p>
-            <p><?= $pickup_details['email'] ?></p>
-            <p><?= $pickup_details['payment_method'] ?></p>
-            <p><?= $pickup_details['address'] ?></p>
+        <div class="customer-details">
+            <h4>Pick Up Details</h4>
+            <p>Customer Name: <?= $pickup_details['first_name'] . ' ' .  $pickup_details['last_name'] ?></p>
+            <p>Mobile No. <?= $pickup_details['mobile_number'] ?></p>
+            <p>Email: <?= $pickup_details['email'] ?></p>
+            <p>Payment method: <?= $pickup_details['payment_method'] ?></p>
+            <p>Pick up address: <?= $pickup_details['address'] ?></p>
         </div>
-        <form action="">
-            <input type="submit" value="Confirm">
+        <form action="" style="align-self: start; margin-left: 1rem;">
+            <button type="submit">Confirm</button>
         </form>
     </div>
 </main>
