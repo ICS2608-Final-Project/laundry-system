@@ -16,12 +16,12 @@ require_once 'classes/ServicesModel.php';
 $services_model = new ServicesModel();
 $user_model = new UserModel();
 
-if (!isset($_GET['payment_id'])) {
+if (!isset($_GET['service_id'])) {
     header("Location: admin.dashboard.php");
     die();
 }
 
-$service_id = $_GET['payment_id'];
+$service_id = $_GET['service_id'];
 $_SESSION['update_id'] = $service_id;
 unset($_GET['service_id']);
 $service = $services_model->fetch_service($service_id);
