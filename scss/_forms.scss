@@ -17,8 +17,23 @@ textarea:active,
 textarea:focus {
   outline: 2px solid $primary;
 }
+
+select,
+option {
+  font-family: $poppins;
+}
+
+select {
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  background-color: $neutral-white;
+  border-radius: 0.5rem;
+  padding: 0.25rem 1rem;
+}
 @media (min-width: 768px) {
-  input, textarea {
+  input,
+  textarea {
     font-size: 1.25rem; /* 20px */
     line-height: 1.75rem; /* 28px */
   }
