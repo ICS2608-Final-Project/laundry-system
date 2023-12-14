@@ -61,7 +61,7 @@ $payment_method = (new PaymentMethodModel())->fetch_payment_method($pickup_detai
             <p>Payment method: <?= $payment_method ?></p>
             <p>Pick up address: <?= $pickup_details['address'] ?></p>
         </div>
-        <form action="" style="align-self: start; margin-left: 1rem;">
+        <form action="handle.order.php" style="align-self: start; margin-left: 1rem;" method="post">
             <button type="submit">Confirm</button>
         </form>
     </div>

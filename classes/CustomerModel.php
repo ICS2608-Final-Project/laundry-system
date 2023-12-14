@@ -27,16 +27,21 @@ class CustomerModel extends Model {
     }
 
 
-    public function fetch_customer($identifier, bool $isCustomerFirstName = false) {
-        $identifier = self::sanitizeInput($identifier);
-        if ($isCustomerFirstName) {
-            $query = "SELECT * FROM customers WHERE is_deleted = 0 AND first_name LIKE :identifier;";
+    public function fetch_customer($identifier, bool $isCustomerName = false) {
+        if ($isCustomerName) {
+            $query = "SELECT * FROM customers WHERE is_deleted = 0 AND first_name LIKE :first_name AND last_name LIKE :last_name;";
         } else {
             $query = "SELECT * FROM customers WHERE is_deleted = 0 AND customer_id = :identifier;";
         }
         try {
             $stmt = $this->connect()->prepare($query);
-            $stmt->bindParam(':identifier', $identifier);
+            if (is_array($identifier)) {
+                $stmt->bindParam(':first_name', $identifier[0]);
+                $stmt->bindParam(':last_name', $identifier[1]);
+            } else {
+                $identifier = self::sanitizeInput($identifier);
+                $stmt->bindParam(':identifier', $identifier);
+            }
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
