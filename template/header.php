@@ -10,7 +10,7 @@
     <header class="navigation-header">
         <nav class="navbar">
             <div class="navleft">
-                <a href="">
+                <a href="index.php">
                     <img src="assets/Logo.svg" alt="Logo" class="navlogo" />
                 </a>
             </div>
@@ -21,13 +21,10 @@
             </a>
             <ul class="nav-items" id="navItems">
                 <li>
-                    <a href="" class="<?php if ($current_page == 'home') { echo 'current'; } ?>">Home</a>
+                    <a href="index.php" class="<?php if ($current_page == 'home') { echo 'current'; } ?>">Home</a>
                 </li>
                 <li>
-                    <a href="">Pricing</a>
-                </li>
-                <li>
-                    <a href="">About Us</a>
+                    <a href="pricing.php">Pricing</a>
                 </li>
                 <li>
                     <a href="booking.php" class="book">Book Now</a>
