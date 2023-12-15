@@ -16,6 +16,11 @@
         <div class="description">
             <p>Your order placement is successful</p>
         </div>
+        <div class="button-section">
+            <a href="index.php" class="button">
+                Back
+            </a>
+        </div>
     </div>
 </main>
 <?php include_once 'template/footer.php' ?>

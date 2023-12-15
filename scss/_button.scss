@@ -1,0 +1,19 @@
+@import 'colors';
+@import 'typography';
+
+.button {
+    font-family: $poppins;
+    cursor: pointer;
+    border: 2px solid $primary;
+    background-color: $primary;
+    padding: 0.5rem 1.5rem;
+    border-radius: .75rem;
+    color: $neutral-white;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: $primary;
+}
