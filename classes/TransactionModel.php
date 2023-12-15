@@ -86,6 +86,22 @@ class TransactionModel extends Model
             die('Query Failed: ' . $e->getMessage());
         }
     }
+    public function update_transaction_status(int $transaction_id, string $transaction_status)
+    {
+        $transaction_id = self::sanitizeInput($transaction_id);
+        $transaction_status = self::sanitizeInput($transaction_status);
+        try {
+            $query = "UPDATE transactions
+            SET transaction_status = :transaction_status
+            WHERE transaction_id = :transaction_id;";
+            $stmt = parent::connect()->prepare($query);
+            $stmt->bindParam(':transaction_id', $transaction_id);
+            $stmt->bindParam(':transaction_status', $transaction_status);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            die('Query Failed: ' . $e->getMessage());
+        }
+    }
 
     //DELETE
 

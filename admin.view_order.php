@@ -102,7 +102,10 @@ if (isset($_GET['id'])) {
     </tr>
   </tbody>
 </table>
-<form action="" method="get">
+<form action="handle.order.update.php" method="get">
+  <div class="">
+    <input type="number" name="id" id="order_id" value=<?= $_GET['id'] ?> class="d-none">
+  </div>
     <label for="" class="form-label">Status</label>
     <select name="status" id="status" class="form-select">
       <option value="Pending" <?php if ($transaction['transaction_status'] == 'Pending') echo 'selected' ?>>Pending</option>
