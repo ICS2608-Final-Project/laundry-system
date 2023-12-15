@@ -39,35 +39,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="input-group mb-3">
                 <span class="input-group-text">Price</span>
                 <span class="input-group-text">₱</span>
-                    <input
-                        type="text"
-                        class="form-control"
-                        name="service_price"
-                        id="service_price"
-                        placeholder="Price"
-                        required
-                    />
+                <input type="text" class="form-control" name="service_price" id="service_price" placeholder="Price" required />
             </div>
             <div class="mb-3">
                 <div class="form-check form-check-inline">
-                    <input
-                        class="form-check-input"
-                        type="radio"
-                        name="service_status"
-                        id="servie_status"
-                        value="active"
-                        checked
-                    />
+                    <input class="form-check-input" type="radio" name="service_status" id="servie_status" value="active" checked />
                     <label class="form-check-label" for="">active</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input
-                        class="form-check-input"
-                        type="radio"
-                        name="service_status"
-                        id="inactive"
-                        value="inactive"
-                    />
+                    <input class="form-check-input" type="radio" name="service_status" id="inactive" value="inactive" />
                     <label class="form-check-label" for="">inactive</label>
                 </div>
             </div>

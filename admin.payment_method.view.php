@@ -29,7 +29,7 @@ $payment_method = $payment_method_model->fetch_payment_method($payment_method_id
 <main class="container">
     <div class="container border my-3 p-3">
         <h2>Change Payment Method</h2>
-        <?php 
+        <?php
         $created_by = $user_model->fetch_user($payment_method['created_by'], false);
         $last_updated_by = $user_model->fetch_user($payment_method['updated_by'], false);
         ?>
@@ -53,17 +53,17 @@ $payment_method = $payment_method_model->fetch_payment_method($payment_method_id
             <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="deleteModalLabel">Delete Payment Method</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Are you sure you want to delete this payment method
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <a href="admin.payment_method.delete.php?delete_id=<?php echo $payment_method_id ?>" class="btn btn-outline-danger">Delete</a>
-                    </div>
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="deleteModalLabel">Delete Payment Method</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete this payment method
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href="admin.payment_method.delete.php?delete_id=<?php echo $payment_method_id ?>" class="btn btn-outline-danger">Delete</a>
+                        </div>
                     </div>
                 </div>
             </div>

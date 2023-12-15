@@ -13,7 +13,7 @@ $progress_status = ['pickup'];
 if (!isset($_SESSION['service_order'])) {
     header("Location: booking.php");
     die();
-} 
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['pickup_details'] = $_POST;
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <main class="booking-section">
     <form action="" class="pickup-form" method="post">
         <?php require_once 'template/progressbar.component.php' ?>
-        
+
         <div class="pickup-inputs">
             <div class="name">
                 <h4>Name</h4>
@@ -45,10 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="payment_method-input form-input">
                 <select name="payment_method" id="payment_method" required>
                     <option value="" selected disabled>-- Select Payment Method --</option>
-                    <?php 
+                    <?php
                     require_once 'classes/PaymentMethodModel.php';
-                    foreach((new PaymentMethodModel())->fetch_payment_methods() as $payment_method) {
-                        echo "<option value='". $payment_method['payment_method_id'] ."'>". ucwords($payment_method['payment_method_name'])."</option>";
+                    foreach ((new PaymentMethodModel())->fetch_payment_methods() as $payment_method) {
+                        echo "<option value='" . $payment_method['payment_method_id'] . "'>" . ucwords($payment_method['payment_method_name']) . "</option>";
                     }
                     ?>
                 </select>

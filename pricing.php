@@ -1,14 +1,13 @@
-
 <?php
-    $page_title = "Love Hon: Pricing";
-    $current_page = 'pricing';
-    $page_description = "";
-    require_once 'config/session.config.php';
-    require_once "template/header.php";
+$page_title = "Love Hon: Pricing";
+$current_page = 'pricing';
+$page_description = "";
+require_once 'config/session.config.php';
+require_once "template/header.php";
 
-    require_once 'classes/ServicesModel.php';
-    $service = new ServicesModel();
-    $services = $service->fetch_services();
+require_once 'classes/ServicesModel.php';
+$service = new ServicesModel();
+$services = $service->fetch_services();
 ?>
 <main class="pricing-section">
     <div class="pricing-hero">
@@ -23,10 +22,10 @@
         </div>
     </div>
     <div class="pricing-cards">
-        <?php 
+        <?php
         require_once 'template/pricing.component.php';
         $pricing = new PricingComponent();
-        for($i = 0;$i < 3; $i++) {
+        for ($i = 0; $i < 3; $i++) {
             $pricing->render($services[$i]['service_name'], $services[$i]['service_price'], $services[$i]['service_description']);
         }
         ?>

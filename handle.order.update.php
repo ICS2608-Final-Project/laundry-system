@@ -3,8 +3,8 @@
 require_once 'config/session.config.php';
 
 if (!isset($_SESSION['user_id'])) {
-  header("Location: admin.php");
-  die();
+    header("Location: admin.php");
+    die();
 }
 
 require_once 'classes/TransactionModel.php';

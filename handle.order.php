@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once 'config/session.config.php';
 
@@ -29,7 +29,7 @@ $current_transaction = $transaction_model->fetch_all_transactions()[0];
 
 $service_transaction_model = new ServiceTransactionModel();
 
-foreach($orders as $service_id => $amount) {
+foreach ($orders as $service_id => $amount) {
     $service_transaction_model->add_service_transaction($service_id, $current_transaction['transaction_id'], $amount);
 }
 
@@ -39,4 +39,3 @@ unset($_SESSION['service_order']);
 
 header("Location: order_success.php");
 die();
-?>

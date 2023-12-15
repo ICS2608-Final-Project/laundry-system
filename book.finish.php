@@ -18,7 +18,7 @@ $payment_method = (new PaymentMethodModel())->fetch_payment_method($pickup_detai
 ?>
 <main class="booking-section">
     <div class="booking-form">
-        <?php 
+        <?php
         require_once 'template/progressbar.component.php';
         ?>
         <table class="booking-table">
@@ -31,25 +31,25 @@ $payment_method = (new PaymentMethodModel())->fetch_payment_method($pickup_detai
                 </tr>
             </thead>
             <tbody>
-                <?php 
-                foreach($orders as $service_id => $amount) {
+                <?php
+                foreach ($orders as $service_id => $amount) {
                     $service = $service_model->fetch_service($service_id);
                     $sub_total = $service['service_price'] * $amount;
                     $total_price += $sub_total;
                 ?>
-                <tr>
-                    <td><?= $service['service_name'] ?></td>
-                    <td><?= 'P ' . $service['service_price'] ?></td>
-                    <td><?= $amount ?></td>
-                    <td><?= 'P ' .  $sub_total ?></td>
+                    <tr>
+                        <td><?= $service['service_name'] ?></td>
+                        <td><?= 'P ' . $service['service_price'] ?></td>
+                        <td><?= $amount ?></td>
+                        <td><?= 'P ' .  $sub_total ?></td>
 
-                </tr>
+                    </tr>
                 <?php
                 }
                 ?>
                 <tr style="border-top: 1px solid black;">
                     <td colspan="3">Order Total</td>
-                    <td><?= 'P '. $total_price ?></td>
+                    <td><?= 'P ' . $total_price ?></td>
                 </tr>
             </tbody>
         </table>

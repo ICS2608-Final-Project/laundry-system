@@ -9,7 +9,7 @@ if (!$_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $services = [];
 
-foreach($_POST as $key => $value) {
+foreach ($_POST as $key => $value) {
     if ($value != 0) {
         $services[$key] = $value;
     }

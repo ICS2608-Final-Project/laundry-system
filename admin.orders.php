@@ -2,8 +2,8 @@
 require_once 'config/session.config.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: admin.php");
-    die();
+  header("Location: admin.php");
+  die();
 }
 
 $current_page = 'orders';
@@ -31,18 +31,18 @@ $transactions = new TransactionModel();
   </thead>
   <tbody>
     <?php
-    foreach($transactions->fetch_all_transactions() as $transaction_data) {
-        echo '<tr>';
-        echo "<th scope='row'>" . $transaction_data['transaction_id'] . "</th>";
-        echo "<td>". ($customer->fetch_customer($transaction_data['customer_id']))['first_name'] . " " . ($customer->fetch_customer($transaction_data['customer_id']))['last_name']. "</td>";
-        echo "<td>" . $transaction_data['transaction_status'] . "</td>";
-        echo "<td>" . $transaction_data['transaction_date'] . "</td>";
-        echo "<td> ₱ " . $transaction_data['total_price'] . "</td>";
-        echo "<td><a href='admin.view_order.php?id=". $transaction_data['transaction_id'] ."' class='btn btn-primary'>View Details</a></td>";
-        echo '</tr>';
+    foreach ($transactions->fetch_all_transactions() as $transaction_data) {
+      echo '<tr>';
+      echo "<th scope='row'>" . $transaction_data['transaction_id'] . "</th>";
+      echo "<td>" . ($customer->fetch_customer($transaction_data['customer_id']))['first_name'] . " " . ($customer->fetch_customer($transaction_data['customer_id']))['last_name'] . "</td>";
+      echo "<td>" . $transaction_data['transaction_status'] . "</td>";
+      echo "<td>" . $transaction_data['transaction_date'] . "</td>";
+      echo "<td> ₱ " . $transaction_data['total_price'] . "</td>";
+      echo "<td><a href='admin.view_order.php?id=" . $transaction_data['transaction_id'] . "' class='btn btn-primary'>View Details</a></td>";
+      echo '</tr>';
     }
     ?>
-    
+
   </tbody>
 </table>
 <?php include_once 'template/admin.footer.php' ?>

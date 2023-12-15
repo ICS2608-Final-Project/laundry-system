@@ -1,9 +1,9 @@
 <?php
-    $page_title = "Home Page";
-    $current_page = 'home';
-    $page_description = "";
-    require_once 'config/session.config.php';
-    require_once "template/header.php";
+$page_title = "Home Page";
+$current_page = 'home';
+$page_description = "";
+require_once 'config/session.config.php';
+require_once "template/header.php";
 ?>
 <main>
     <section class="hero-section">
@@ -41,7 +41,7 @@
 
         </div>
         <div class="contact-right">
-            <?php 
+            <?php
             require_once 'template/contact.form.php';
             ?>
         </div>

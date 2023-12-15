@@ -1,22 +1,22 @@
-@import 'normalize';
-@import 'typography';
-@import 'footer';
-@import 'header';
-@import 'colors';
-@import 'pricing.component';
-@import 'home';
-@import 'contact.form';
-@import 'booking';
-@import 'booking.pickup';
-@import 'forms';
-@import 'pricing';
-@import 'booking.finish';
-@import 'order.success';
-@import 'button';
+@import "normalize";
+@import "typography";
+@import "footer";
+@import "header";
+@import "colors";
+@import "pricing.component";
+@import "home";
+@import "contact.form";
+@import "booking";
+@import "booking.pickup";
+@import "forms";
+@import "pricing";
+@import "booking.finish";
+@import "order.success";
+@import "button";
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: $neutral-white-2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $neutral-white-2;
 }

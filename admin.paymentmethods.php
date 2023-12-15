@@ -27,11 +27,11 @@ $payment_methods = $payment_model->fetch_payment_methods();
             </tr>
         </thead>
         <tbody>
-            <?php 
-            foreach($payment_methods as $payment_method) {
+            <?php
+            foreach ($payment_methods as $payment_method) {
                 echo "<tr>";
-                echo "<th scope='row'>" . $payment_method['payment_method_id'] ."</th>";
-                echo "<td> <a href='admin.payment_method.view.php?payment_id=". $payment_method['payment_method_id'] ."'> " . $payment_method['payment_method_name'] ."</a></td>";
+                echo "<th scope='row'>" . $payment_method['payment_method_id'] . "</th>";
+                echo "<td> <a href='admin.payment_method.view.php?payment_id=" . $payment_method['payment_method_id'] . "'> " . $payment_method['payment_method_name'] . "</a></td>";
                 echo "</tr>";
             }
             ?>

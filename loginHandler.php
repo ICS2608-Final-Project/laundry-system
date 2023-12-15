@@ -52,29 +52,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     die();
 }
 
-function sanitizeInput($data) {
+function sanitizeInput($data)
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
 }
 
-function is_username_empty($username) {
+function is_username_empty($username)
+{
     return empty($username);
 }
 
-function is_password_empty($password) {
+function is_password_empty($password)
+{
     return empty($password);
 }
 
-function hash_password(string $password) {
+function hash_password(string $password)
+{
     $options = [
         'cost' => 12
     ];
     return password_hash($password, PASSWORD_BCRYPT, $options);
 }
 
-function is_username_wrong(bool|array $user) {
+function is_username_wrong(bool|array $user)
+{
     if ($user) {
         return false;
     } else {
@@ -82,7 +87,8 @@ function is_username_wrong(bool|array $user) {
     }
 }
 
-function is_password_wrong(bool|array $user, string $password) {
+function is_password_wrong(bool|array $user, string $password)
+{
     if (password_verify($password, $user['user_password'])) {
         return false;
     } else {

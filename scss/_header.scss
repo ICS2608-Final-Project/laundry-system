@@ -22,11 +22,11 @@
   display: flex;
   width: 1.5rem;
   height: 1.5rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  
+
   .bar {
     height: 2px;
     width: 100%;
@@ -60,7 +60,6 @@
   display: flex;
 }
 
-
 .nav-items {
   display: none;
   flex-direction: column;
@@ -82,14 +81,14 @@
 
   a {
     text-decoration: none;
-    transition: .4s ease-in-out;
+    transition: 0.4s ease-in-out;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.25rem;
     color: $neutral-black-2;
     text-decoration: none;
     width: 100%;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     text-align: center;
   }
 
@@ -149,8 +148,8 @@
     }
 
     .book {
-      padding: .75rem 1.25rem;  
-      border-radius: .5rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.5rem;
     }
   }
   .navlogo {

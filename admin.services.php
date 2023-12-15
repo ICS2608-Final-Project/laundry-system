@@ -29,11 +29,11 @@ $services = $services_model->fetch_services();
             </tr>
         </thead>
         <tbody>
-            <?php 
-            foreach($services as $service) {
+            <?php
+            foreach ($services as $service) {
                 echo "<tr>";
-                echo "<th scope='row'>" . $service['service_id'] ."</th>";
-                echo "<td> <a href='admin.service.view.php?service_id=". $service['service_id'] ."'> " . $service['service_name'] ."</a></td>";
+                echo "<th scope='row'>" . $service['service_id'] . "</th>";
+                echo "<td> <a href='admin.service.view.php?service_id=" . $service['service_id'] . "'> " . $service['service_name'] . "</a></td>";
                 echo "<td>" . $service['service_description'] . "</td>";
                 echo "<td>" . $service['service_price'] . "</td>";
                 echo "</tr>";

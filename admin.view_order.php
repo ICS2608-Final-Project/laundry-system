@@ -106,19 +106,19 @@ if (isset($_GET['id'])) {
   <div class="">
     <input type="number" name="id" id="order_id" value=<?= $_GET['id'] ?> class="d-none">
   </div>
-    <label for="" class="form-label">Status</label>
-    <select name="status" id="status" class="form-select">
-      <option value="Pending" <?php if ($transaction['transaction_status'] == 'Pending') echo 'selected' ?>>Pending</option>
-      <option value="Unpaid" <?php if ($transaction['transaction_status'] == 'Unpaid') echo 'selected' ?>>Unpaid</option>
-      <option value="Confirmed" <?php if ($transaction['transaction_status'] == 'Confirmed') echo 'selected' ?>>Confirmed</option>
-      <option value="Paid" <?php if ($transaction['transaction_status'] == 'Paid') echo 'selected' ?>>Paid</option>
-      <option value="Cancelled" <?php if ($transaction['transaction_status'] == 'Cancelled') echo 'selected' ?>>Cancelled</option>
-      <option value="Completed" <?php if ($transaction['transaction_status'] == 'Completed') echo 'selected' ?>>Completed</option>
-      <option value="On Hold" <?php if ($transaction['transaction_status'] == 'On Hold') echo 'selected' ?>>On Hold</option>
-      <option value="Processing" <?php if ($transaction['transaction_status'] == 'Processing') echo 'selected' ?>>Processing</option>
-      <option value="Refunded" <?php if ($transaction['transaction_status'] == 'Refunded') echo 'selected' ?>>Refunded</option>
-      <option value="Review Pending" <?php if ($transaction['transaction_status'] == 'Review Pending') echo 'selected' ?>>Review Pending</option>
-    </select>
-    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+  <label for="" class="form-label">Status</label>
+  <select name="status" id="status" class="form-select">
+    <option value="Pending" <?php if ($transaction['transaction_status'] == 'Pending') echo 'selected' ?>>Pending</option>
+    <option value="Unpaid" <?php if ($transaction['transaction_status'] == 'Unpaid') echo 'selected' ?>>Unpaid</option>
+    <option value="Confirmed" <?php if ($transaction['transaction_status'] == 'Confirmed') echo 'selected' ?>>Confirmed</option>
+    <option value="Paid" <?php if ($transaction['transaction_status'] == 'Paid') echo 'selected' ?>>Paid</option>
+    <option value="Cancelled" <?php if ($transaction['transaction_status'] == 'Cancelled') echo 'selected' ?>>Cancelled</option>
+    <option value="Completed" <?php if ($transaction['transaction_status'] == 'Completed') echo 'selected' ?>>Completed</option>
+    <option value="On Hold" <?php if ($transaction['transaction_status'] == 'On Hold') echo 'selected' ?>>On Hold</option>
+    <option value="Processing" <?php if ($transaction['transaction_status'] == 'Processing') echo 'selected' ?>>Processing</option>
+    <option value="Refunded" <?php if ($transaction['transaction_status'] == 'Refunded') echo 'selected' ?>>Refunded</option>
+    <option value="Review Pending" <?php if ($transaction['transaction_status'] == 'Review Pending') echo 'selected' ?>>Review Pending</option>
+  </select>
+  <button type="submit" class="btn btn-primary mt-2">Submit</button>
 </form>
 <?php include_once 'template/admin.footer.php' ?>

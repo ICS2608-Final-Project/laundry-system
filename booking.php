@@ -1,12 +1,12 @@
 <?php
-    $page_title = "Love Hon: Choose a service";
-    $current_page = 'booking';
-    $page_description = "";
-    require_once 'config/session.config.php';
-    require_once "template/header.php";
-    require_once 'classes/ServicesModel.php';
-    $progress_status = [];
-    $services = (new ServicesModel())->fetch_services();
+$page_title = "Love Hon: Choose a service";
+$current_page = 'booking';
+$page_description = "";
+require_once 'config/session.config.php';
+require_once "template/header.php";
+require_once 'classes/ServicesModel.php';
+$progress_status = [];
+$services = (new ServicesModel())->fetch_services();
 ?>
 <main class="booking-section">
     <form action="book.service.php" class="booking-form" method="post">
@@ -33,13 +33,13 @@
     </form>
     <script>
         const services = [
-            <?php 
-            foreach($services as $service) {
+            <?php
+            foreach ($services as $service) {
                 echo "{";
-                echo "serviceId: ". $service['service_id'] . ", ";
-                echo "serviceName: '". $service['service_name'] . "', ";
-                echo "serviceDescription: '". $service['service_description'] . "', ";
-                echo "servicePrice: '". $service['service_price'] . "', ";
+                echo "serviceId: " . $service['service_id'] . ", ";
+                echo "serviceName: '" . $service['service_name'] . "', ";
+                echo "serviceDescription: '" . $service['service_description'] . "', ";
+                echo "servicePrice: '" . $service['service_price'] . "', ";
                 echo "},";
             }
             ?>
@@ -53,9 +53,15 @@
             const serviceQuantityColumn = document.createElement('td');
             const servicePriceColumn = document.createElement('td');
 
-            const serviceName = document.createElement('h5', { id: 'serviceName' });
-            const servicePriceInfo = document.createElement("p", { id: 'servicePrice' });
-            const serviceDescription = document.createElement('p', { id: 'serviceDescriptionn' });
+            const serviceName = document.createElement('h5', {
+                id: 'serviceName'
+            });
+            const servicePriceInfo = document.createElement("p", {
+                id: 'servicePrice'
+            });
+            const serviceDescription = document.createElement('p', {
+                id: 'serviceDescriptionn'
+            });
 
             serviceName.innerHTML = service['serviceName'];
             servicePriceInfo.innerHTML = 'P' + service['servicePrice'];
@@ -70,13 +76,16 @@
 
             serviceQuantityColumn.appendChild(selectQuantity);
 
-            const servicePrice = document.createElement('p', { class: 'service-price', id: `price_${service['serviceId']}`});
+            const servicePrice = document.createElement('p', {
+                class: 'service-price',
+                id: `price_${service['serviceId']}`
+            });
 
             servicePrice.innerHTML = 'P0';
-            
+
             servicePriceColumn.appendChild(servicePrice);
 
-            
+
             selectQuantity.addEventListener('change', () => {
                 servicePrice.innerHTML = `P${service['servicePrice'] * selectQuantity.value}`;
             });
@@ -94,9 +103,9 @@
             select.setAttribute('class', selectClass);
             select.setAttribute('name', selectName);
             select.setAttribute('id', selectId);
-            for(i = 0; i < 10; i++) {
+            for (i = 0; i < 10; i++) {
                 const option = document.createElement('option');
-                option.innerHTML = i+0;
+                option.innerHTML = i + 0;
                 select.appendChild(option);
             }
             return select;
