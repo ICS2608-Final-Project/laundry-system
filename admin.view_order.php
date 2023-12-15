@@ -64,13 +64,13 @@ if (isset($_GET['id'])) {
           <?= "P " . $service_transaction['price'] ?>
         </td>
       </tr>
-      <tr class="table-group-divider">
-        <th colspan='3'>Total Price</th>
-        <td><?= "P " . $transaction['total_price']; ?></td>
-      </tr>
     <?php
     }
     ?>
+    <tr class="table-group-divider">
+      <th colspan='3'>Total Price</th>
+      <td><?= "P " . $transaction['total_price']; ?></td>
+    </tr>
   </tbody>
 </table>
 <table class="table table-sm">
